@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee{% endblock %}
+{% block content %}
+    <div id="wrapper">
+        <body>
+
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a class="active" href="homepage">Home</a>
+                <a href="about">About</a>
+                <a href="#faves">Favourites</a>
+                <a href="#">Sign-in</a>
+            </div>
+        </div>
+
+        <div class="searchHeader">What would you like to eat?</div>
+
+        <div class="searchContainer">
+            <form action="/action_page.php" method="get">
+                <input type="text" name="search"/>
+                <br>
+                <input type="submit" value="NEXT"/>
+            </form>
+        </div>
+
+
+
+        <div id="summary">
+            <p>
+                Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
+                Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
+                and Fussee will return recipes for you that match your search criteria. <br><br>
+            </p>
+        </div>
+
+        </body>
+    </div>
+{% endblock %}

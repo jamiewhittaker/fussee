@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/processstatus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/DatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/DatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/SoapWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/SoapWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/UserDatabaseValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/UserDatabaseValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/UserDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/UserDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/UserLoginValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/UserLoginValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/models/CircuitStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/models/CircuitStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/Login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/Login.html.twig" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/slim/twig-view" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1W1XgslPdziqnAQTIvOuDyKAgHU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dumpAutoload D:/xampp/htdocs/fussee2/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="dumpAutoload D:/xampp/htdocs/fussee2/includes/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
+      <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
+      <recent name="D:\xampp\htdocs\m2m-slim\app\routes" />
+      <recent name="D:\xampp\htdocs\m2m-slim\app\src" />
+      <recent name="D:\xampp\htdocs\m2m-slim\public\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\fussee2\assets" />
+      <recent name="D:\xampp\htdocs\fussee2\includes" />
+      <recent name="D:\xampp\htdocs\fussee2" />
+      <recent name="D:\xampp\htdocs\m2m-slim\app" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="" />
+      <created>1578318188292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578318188292</updated>
+      <workItem from="1578318189445" duration="27359000" />
+      <workItem from="1578417780822" duration="2350000" />
+      <workItem from="1578426502245" duration="1920000" />
+      <workItem from="1578599948799" duration="12036000" />
+      <workItem from="1578676276325" duration="9235000" />
+      <workItem from="1578687933730" duration="9904000" />
+      <workItem from="1579470505517" duration="230000" />
+      <workItem from="1579471043933" duration="2877000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578750166763">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578750166763" />
+    <state x="552" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.52.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1578681763508" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578688073473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578688073473" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578792260490">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578792260490" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.52.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1578681056067" />
+    <state x="739" y="335" key="NewPhpClassDialog" timestamp="1578780459750">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="335" key="NewPhpClassDialog/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578780459750" />
+    <state x="739" y="335" key="NewPhpClassDialog/1920.52.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1578684248686" />
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1578683813321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="444" key="NewPhpFileDialog/1920.52.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1578683813321" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578687935192">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578687935192" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/1920.52.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1578676277743" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578749765019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578749765019" />
+  </component>
+</project>

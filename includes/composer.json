@@ -1,0 +1,26 @@
+{
+  "name": "m2m-slim/m2m-slim",
+  "description": "communicates with EE M2M server",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jamie Whittaker",
+      "email": "p17212868@my365.dmu.ac.uk"
+    }
+  ],
+  "require": {
+    "slim/slim": "3.*",
+    "slim/twig-view": "^2.1",
+    "monolog/monolog": "^2.0",
+    "ext-pdo": "*",
+    "ext-soap": "*",
+    "ext-xml": "*",
+    "ext-simplexml": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/src"
+    }
+  }
+}

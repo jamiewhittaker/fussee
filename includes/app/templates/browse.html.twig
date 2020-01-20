@@ -1,35 +1,19 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Fussee{% endblock %}
 {% block content %}
+
     <div id="wrapper">
         <body>
 
         <div class="topnav">
             <div class="logo">fussee</div>
             <div class="topnav-right">
-                <a class="active" href="homepage">Home</a>
+                <a href="homepage">Home</a>
                 <a href="about">About</a>
-                <a href="browse">Browse</a>
+                <a class="active" href="browse">Browse</a>
                 <a href="#">Sign-in</a>
             </div>
         </div>
-
-        <script>
-            let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
-
-            function getRandomImage() {
-                let folderPath = "assets/";
-                let num = Math.floor( Math.random() * images.length);
-                let image = images[num];
-                let imgStr = '<img src="' + folderPath + image + '" alt = "">';
-                document.write(imgStr);
-                document.close();
-            }
-        </script>
-
-        <div id="image"><script type="text/javascript">getRandomImage();</script></div>
-
-
 
         <div class="searchArea">
             <div class="searchHeader">What would you like to eat?</div>
@@ -43,13 +27,7 @@
             </div>
         </div>
 
-        <div id="summary">
-            <p>
-                Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
-                Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
-                and Fussee will return recipes for you that match your search criteria. <br><br>
-            </p>
-        </div>
+        <p>test test</p>
         </body>
     </div>
     <script>
@@ -65,6 +43,6 @@
             })
 
 
-        });
+            });
     </script>
 {% endblock %}

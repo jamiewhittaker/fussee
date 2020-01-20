@@ -87,7 +87,7 @@ body {
 	float:right;
 }
 
-.footer {
+.fussee-footer {
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -113,25 +113,19 @@ body {
 	font-weight: bold;
 	font-size: 18px;
 	margin-bottom: -20px;
-	margin-top: 20px;
 	-webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
 	animation: fadein 5s;
+	color: white;
+	margin-top: 10px;
 }
 
-input{
-	border: none;
-	padding: 10px;
-	margin: 10px;
-	height: 50px;
-	width: 300px;
-	border: 1px solid lightgray;
-	outline: none;
+input[type="text"]{
+	resize: vertical;
 }
 
 input[type="submit"] {
 	border-radius: 2px;
-	background: #f2f2f2;
-	border: 1px solid #f2f2f2;
+	border: 0px solid #f2f2f2;
 	color: #757575;
 	cursor: default;
 	font-size: 14px;
@@ -139,6 +133,7 @@ input[type="submit"] {
 	width: 100px;
 	padding: 0 16px;
 	height:36px;
+	margin-bottom: 15px;
 }
 
 input[type="submit"]:hover {
@@ -172,7 +167,6 @@ img {
 
 
 #image {
-	margin-bottom: 10px;
 	text-align: center;
 	font-size: 10px;
 }
@@ -231,3 +225,24 @@ img {
 	animation-name: bounceIn;
 }
 
+.searchbox {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.searchArea {
+	background-color: #3d3d3d;
+	margin-top: -5px;
+	padding-top: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+::placeholder {
+	color: black;
+}
+
+.searchMargin {
+	margin-bottom: 5px;
+}

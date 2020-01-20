@@ -5,17 +5,13 @@
         <body>
 
         <div class="topnav">
-
             <div class="logo">fussee</div>
-
             <div class="topnav-right">
                 <a href="homepage">Home</a>
                 <a class="active" href="about">About</a>
-                <a href="#faves">Favourites</a>
+                <a href="browse">Browse</a>
                 <a href="#">Sign-in</a>
-
             </div>
-
         </div>
 
 
@@ -26,20 +22,13 @@
                 let folderPath = "assets/";
                 let num = Math.floor( Math.random() * images.length);
                 let image = images[num];
-
                 let imgStr = '<img src="' + folderPath + image + '" alt = "">';
-
                 document.write(imgStr);
                 document.close();
-
             }
-
         </script>
 
-
         <div id="image"><script type="text/javascript">getRandomImage();</script></div>
-
-
 
         <div id="summary">
         <p>
@@ -57,6 +46,8 @@
                 <li>TWIG template engine</li>
                 <li>MySQL database</li>
             </ul>
+            <br>
+            All images used are royalty free images from <a href="https://unsplash.com/">Unsplash</a>.
         </p>
     </div>
 

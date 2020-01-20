@@ -88,18 +88,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\fussee\css" />
+      <recent name="D:\xampp\htdocs\fussee" />
+      <recent name="D:\xampp\htdocs\fussee2\assets" />
+      <recent name="D:\xampp\htdocs\fussee2\includes" />
+      <recent name="D:\xampp\htdocs\fussee2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\routes" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\src" />
       <recent name="D:\xampp\htdocs\m2m-slim\public\media" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\fussee2\assets" />
-      <recent name="D:\xampp\htdocs\fussee2\includes" />
-      <recent name="D:\xampp\htdocs\fussee2" />
-      <recent name="D:\xampp\htdocs\m2m-slim\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -132,6 +133,7 @@
       <workItem from="1578687933730" duration="9904000" />
       <workItem from="1579470505517" duration="230000" />
       <workItem from="1579471043933" duration="2877000" />
+      <workItem from="1579475074660" duration="11307000" />
     </task>
     <servers />
   </component>

@@ -26,6 +26,11 @@ $app->post('/signin', function(Request $request, Response $response){
            return $this->view->render($response->withRedirect('about'), 'about.html.twig');
     }}
 
+    if (isset($_POST['loginSubmit'])) {
+        if ($db->findUser() === true){
+            return $this->view->render($response->withRedirect('about'), 'about.html.twig');
+        }}
+
 
 
 });

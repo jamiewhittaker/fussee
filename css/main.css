@@ -119,9 +119,7 @@ body {
 	margin-top: 10px;
 }
 
-input[type="text"]{
-	resize: vertical;
-}
+
 
 input[type="submit"] {
 	border-radius: 2px;
@@ -246,3 +244,28 @@ img {
 .searchMargin {
 	margin-bottom: 5px;
 }
+
+#loginContainer {
+	padding-left: 50px;
+	padding-right: 50px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+#left, #right {
+	display: inline-block;
+	width: 45%;
+	height: 100%;
+	margin-right: 30px;
+}
+
+#loginImage {
+	margin-top: 10px;
+}
+
+
+object{
+	display: block;
+	margin: auto;
+}
+

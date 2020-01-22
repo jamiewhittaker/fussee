@@ -14,17 +14,39 @@
             </div>
         </div>
 
-        <div id="summary">
-        <h1>Register</h1>
+        <div id="loginImage">
+            <object type="image/svg+xml" data="assets/authentication.svg" width="250px" align="center"></object>
+        </div>
+
+        <div id="loginContainer">
+            <br>
+            <div id="left">
+            <h1>Existing users:</h1>
+            <p>Log in to view your favourite recipes!</p>
+            <form method="post">
+                Username:<br>
+                <input type="text" name="loginUsername" style="width: 250px"><br><br>
+                Email:<br>
+                <input type="text" name="loginEmail" style="width: 250px"><br><br>
+                Password:<br>
+                <input type="password" name="loginPassword" style="width: 250px"><br><br>
+                <button name="loginSubmit">Login</button>
+            </form>
+        </div>
+
+        <div id="right">
+        <h1>New users:</h1>
+        <p>Registration allows you to favourite recipes that you've found!</p>
         <form method="post">
             Username:<br>
-            <input type="text" name="registerUsername"><br><br>
+            <input type="text" name="registerUsername" style="width: 250px"><br><br>
             Email:<br>
-            <input type="text" name="registerEmail"><br><br>
+            <input type="text" name="registerEmail" style="width: 250px"><br><br>
             Password:<br>
-            <input type="text" name="registerPassword"><br>
+            <input type="password" name="registerPassword" style="width: 250px"><br><br>
             <button name="registerSubmit">Sign Up</button>
         </form>
+        </div>
         </div>
 
 

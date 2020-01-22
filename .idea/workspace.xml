@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/search.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/contact.html.twig" afterDir="false" />
     </list>
@@ -31,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="55" column="29" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="29" />
+            <state relative-caret-position="15">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -58,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/app/templates/contact.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="964">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#form#0;n#div#2;n#body#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -125,9 +124,9 @@
       <find>is-highlighted</find>
       <find>selectable</find>
       <find>webkit</find>
-      <find>color</find>
       <find>li</find>
       <find>active</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,7 +143,6 @@
         <option value="$PROJECT_DIR$/includes/app/settings.php" />
         <option value="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" />
         <option value="$PROJECT_DIR$/includes/app/routes/signin.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/css/choices.css" />
         <option value="$PROJECT_DIR$/includes/app/routes/contact.php" />
         <option value="$PROJECT_DIR$/includes/app/routes.php" />
@@ -152,6 +150,7 @@
         <option value="$PROJECT_DIR$/includes/app/templates/signin.html.twig" />
         <option value="$PROJECT_DIR$/includes/app/templates/browse.html.twig" />
         <option value="$PROJECT_DIR$/includes/app/templates/contact.html.twig" />
+        <option value="$PROJECT_DIR$/css/main.css" />
       </list>
     </option>
   </component>
@@ -293,12 +292,12 @@
       <workItem from="1579470505517" duration="230000" />
       <workItem from="1579471043933" duration="2877000" />
       <workItem from="1579475074660" duration="11307000" />
-      <workItem from="1579699743478" duration="9020000" />
+      <workItem from="1579699743478" duration="9740000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9020000" />
+    <option name="totallyTimeSpent" value="9740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="6" />
@@ -488,24 +487,10 @@
     <entry file="file://$PROJECT_DIR$/includes/app/templates/test.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/choices.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="203" column="20" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/app/templates/signin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -519,13 +504,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/choices.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="203" column="20" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/app/templates/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="964">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#form#0;n#div#2;n#body#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>

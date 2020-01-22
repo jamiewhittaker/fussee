@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee{% endblock %}
+{% block content %}
+    <div id="wrapper">
+        <body>
+
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a href="homepage">Home</a>
+                <a href="about">About</a>
+                <a href="browse">Browse</a>
+                <a class="active" href="signin">Sign-in</a>
+            </div>
+        </div>
+
+        <div id="summary">
+        <h1>Register</h1>
+        <form method="post">
+            Username:<br>
+            <input type="text" name="registerUsername"><br><br>
+            Email:<br>
+            <input type="text" name="registerEmail"><br><br>
+            Password:<br>
+            <input type="text" name="registerPassword"><br>
+            <button name="registerSubmit">Sign Up</button>
+        </form>
+        </div>
+
+
+
+        </body>
+    </div>
+{% endblock %}

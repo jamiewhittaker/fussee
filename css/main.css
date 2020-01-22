@@ -53,7 +53,7 @@ body {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-	background-color: #397194;
+	background-color: #00aa55;
 	color: white;
 }
 
@@ -147,6 +147,7 @@ input[type="submit"]:hover {
 img {
 	max-width: 100%;
 	height: auto;
+	margin-bottom: -5px;
 }
 
 #summary{
@@ -232,7 +233,6 @@ img {
 
 .searchArea {
 	background-color: #3d3d3d;
-	margin-top: -5px;
 	padding-top: 2px;
 	padding-left: 20px;
 	padding-right: 20px;

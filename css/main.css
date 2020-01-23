@@ -269,3 +269,6 @@ object{
 	margin: auto;
 }
 
+#smallText {
+	font-size: 5px;
+}

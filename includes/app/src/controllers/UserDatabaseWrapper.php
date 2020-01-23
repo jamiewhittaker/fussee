@@ -17,11 +17,11 @@ class UserDatabaseWrapper
 
     public function insertUser(){
         $user = $this->user = new User(
-            $_POST['registerUsername'],
+            $_POST['registerFirstName'],
             $_POST['registerPassword'],
             $_POST['registerEmail']);
 
-        $username = $user->getUsername();
+        $firstName = $user->getFirstName();
         $password = $user->getPassword();
         $email = $user->getEmail();
 
@@ -29,11 +29,10 @@ class UserDatabaseWrapper
             $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
             $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $findStatement = "SELECT COUNT(*) FROM `users` WHERE username = :username OR email = :email";
+            $findStatement = "SELECT COUNT(*) FROM `users` WHERE email = :email";
 
             $sql = $this->database->prepare($findStatement);
 
-            $sql->bindParam(':username', $username);
             $sql->bindParam(':email', $email);
 
             if ($sql->execute() === false) {
@@ -45,12 +44,12 @@ class UserDatabaseWrapper
                     return false;
                 } else {
 
-                    $insertStatement = "INSERT into `users` (username, password, email) VALUES (:username, :password, :email)";
+                    $insertStatement = "INSERT into `users` (firstName, password, email) VALUES (:firstName, :password, :email)";
 
                     $sql = $this->database->prepare($insertStatement);
 
-                    $sql->bindParam(':username', $username);
-                    $sql->bindParam(':password', $password);
+                    $sql->bindParam(':firstName', $firstName);
+                    $sql->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
                     $sql->bindParam(':email', $email);
 
                     if ($sql->execute() === false) {

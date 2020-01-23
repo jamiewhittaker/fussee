@@ -10,17 +10,17 @@ namespace App\models;
 
 class User{
 
-    private $username;
+    private $firstName;
     private $password;
     private $email;
 
-    public function __construct($username,$password,$email){
-        $this->username = $username;
+    public function __construct($firstName,$password,$email){
+        $this->firstName = $firstName;
         $this->password = $password;
         $this->email = $email;
     }
-    public function getUsername() {
-        return $this->username;
+    public function getFirstName() {
+        return $this->firstName;
     }
     public function getPassword() {
         return $this->password;

@@ -10,16 +10,26 @@
                 <a href="homepage">Home</a>
                 <a href="about">About</a>
                 <a href="browse">Browse</a>
-                <a href="user-cp">
-                    <div class="loggedInUser">
-                        <object type="image/svg+xml" data="assets/avatar.svg"></object>
-                        {{ firstName }}
+                <div class="dropdown">
+                    <a href="user-cp">
+                        <div class="loggedInUser">
+                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                            {{ firstName }}
+                        </div>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="favourites">Favourites</a>
+                        <a href="user-cp">Settings</a>
+                        <a href="logout">Logout</a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
-        You are already logged in. You do not have permission to use this page.
+        <div id="login-error">
+            <span id="error-message"> You are already logged in. You do not have permission to use this page. </span>
+        </div>
 
         </body>
     </div>

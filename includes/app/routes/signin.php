@@ -34,8 +34,9 @@ $app->post('/signin', function(Request $request, Response $response){
 
     if (isset($_POST['loginSubmit'])) {
         if ($db->findUser() === true){
-            return $this->view->render($response->withRedirect('about'), 'about-loggedout.twig');
-        }}
+            return $this->view->render($response->withRedirect('about'), 'about-loggedin.twig');
+        }
+    }
 
 
 

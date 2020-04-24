@@ -72,7 +72,39 @@ class UserDatabaseWrapper
 
     }
 
+    public function findUser(){
+        $email =  $_POST['loginEmail'];
+        $password = $_POST['loginPassword'];
 
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        if($email != "" && $password != "") {
+            try {
+                $query = "select * from `users` where `email`=:email";
+                $sql = $this->database->prepare($query);
+                $sql->bindParam('email', $email, PDO::PARAM_STR);
+                $sql->execute();
+                $count = $sql->rowCount();
+                $row   = $sql->fetch(PDO::FETCH_ASSOC);
+
+                if($count == 1 && !empty($row)) {
+                    if (password_verify($password, $row['password'])) {
+                        session_start();
+                        $_SESSION['email'] = $row['email'];
+                        $_SESSION['firstName'] = $row['firstName'];
+                        $_SESSION['loggedIn'] = TRUE;
+                        return TRUE;
+                    } else {
+                        echo 'Invalid password.';
+                        return FALSE;
+                    }
+                }
+            } catch (PDOException $e) {
+                echo "Error : ".$e->getMessage();
+            }
+        }
+    }
 
 
 }

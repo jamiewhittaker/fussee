@@ -4,10 +4,8 @@
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/about-loggedin.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/about-loggedin.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +128,7 @@
       <workItem from="1579475074660" duration="11307000" />
       <workItem from="1579699743478" duration="10785000" />
       <workItem from="1579866321369" duration="1992000" />
-      <workItem from="1587737888844" duration="6647000" />
+      <workItem from="1587737888844" duration="10075000" />
     </task>
     <servers />
   </component>
@@ -197,5 +195,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578749765019" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php</url>
+          <line>74</line>
+          <properties>
+            <option name="className" value="\App\controllers\UserDatabaseWrapper" />
+            <option name="methodName" value="findUser" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

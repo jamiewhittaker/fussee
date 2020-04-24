@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Fussee{% endblock %}
+{% block title %}Fussee - Browse{% endblock %}
 {% block content %}
 
     <div id="wrapper">
@@ -11,12 +11,20 @@
                 <a href="homepage">Home</a>
                 <a href="about">About</a>
                 <a class="active" href="browse">Browse</a>
-                <a href="user-cp">
-                    <div class="loggedInUser">
-                        <object type="image/svg+xml" data="assets/avatar.svg"></object>
-                        {{ firstName }}
+                <div class="dropdown">
+                    <a href="user-cp">
+                        <div class="loggedInUser">
+                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                            {{ firstName }}
+                        </div>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="favourites">Favourites</a>
+                        <a href="user-cp">Settings</a>
+                        <a href="logout">Logout</a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 

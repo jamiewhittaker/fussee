@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/avatar.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/routes/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/templates/about-loggedout.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/m2m_slim.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/about-loggedin.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/includes/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/about-loggedin.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/about-loggedin.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +130,7 @@
       <workItem from="1579475074660" duration="11307000" />
       <workItem from="1579699743478" duration="10785000" />
       <workItem from="1579866321369" duration="1992000" />
-      <workItem from="1587737888844" duration="4871000" />
+      <workItem from="1587737888844" duration="6647000" />
     </task>
     <servers />
   </component>

@@ -28,13 +28,24 @@ $app->post('/signin', function(Request $request, Response $response){
     $db = new UserDatabaseWrapper();
 
     if (isset($_POST['registerSubmit'])) {
-       if ($db->insertUser() === true){
+        $registerResult = $db->insertUser();
+
+        if ($registerResult === true){
            return $this->view->render($response->withRedirect('about'), 'about-loggedin.twig');
-    }}
+        } else {
+            $arr["error"] = $registerResult;
+            return $this->view->render($response, 'signin-error.html.twig', $arr);
+        }
+    }
 
     if (isset($_POST['loginSubmit'])) {
-        if ($db->findUser() === true){
+        $loginResult = $db->findUser();
+
+        if ($loginResult === true){
             return $this->view->render($response->withRedirect('about'), 'about-loggedin.twig');
+        } else {
+            $arr["error"] = $loginResult;
+            return $this->view->render($response, 'signin-error.html.twig', $arr);
         }
     }
 

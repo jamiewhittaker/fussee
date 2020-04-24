@@ -17,13 +17,31 @@ class UserDatabaseWrapper
 
     public function insertUser(){
         $user = $this->user = new User(
-            $_POST['registerFirstName'],
-            $_POST['registerPassword'],
-            $_POST['registerEmail']);
+            trim($_POST['registerFirstName']),
+            trim($_POST['registerPassword']),
+            trim($_POST['registerEmail']));
 
         $firstName = $user->getFirstName();
         $password = $user->getPassword();
         $email = $user->getEmail();
+
+        if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email))
+        {
+            return "Account information cannot contain special characters";
+        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
+            return "Account information cannot contain special characters";
+        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $firstName)) {
+            return "Account information cannot contain special characters";
+        } elseif (isset($email) === true && $email === '') {
+            return "Please enter an email address";
+        } elseif (isset($password) === true && $password === '') {
+            return "Please enter a password";
+        } elseif (isset($firstName) === true && $firstName === '') {
+            return "Please enter your first name";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "Please enter a valid email address";
+        } else {
+
 
         try{
             $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
@@ -41,7 +59,7 @@ class UserDatabaseWrapper
                 $count = $sql->fetchColumn();
 
                 if ($count > 0) {
-                    return false;
+                    return "An account is already registered using that email address";
                 } else {
 
                     $insertStatement = "INSERT into `users` (firstName, password, email) VALUES (:firstName, :password, :email)";
@@ -71,40 +89,53 @@ class UserDatabaseWrapper
         }
 
     }
+    }
 
-    public function findUser(){
-        $email =  $_POST['loginEmail'];
-        $password = $_POST['loginPassword'];
+    public function findUser()
+    {
+        $email = trim($_POST['loginEmail']);
+        $password = trim($_POST['loginPassword']);
 
-        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
-        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
+            return "Account information cannot contain special characters";
+        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
+            return "Account information cannot contain special characters";
+        } elseif (isset($email) === true && $email === '') {
+            return "Please enter an email address";
+        } elseif (isset($password) === true && $password === '') {
+            return "Please enter a password";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "Please enter a valid email address";
+        } else {
 
-        if($email != "" && $password != "") {
-            try {
-                $query = "select * from `users` where `email`=:email";
-                $sql = $this->database->prepare($query);
-                $sql->bindParam('email', $email, PDO::PARAM_STR);
-                $sql->execute();
-                $count = $sql->rowCount();
-                $row   = $sql->fetch(PDO::FETCH_ASSOC);
+            $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                if($count == 1 && !empty($row)) {
-                    if (password_verify($password, $row['password'])) {
-                        session_start();
-                        $_SESSION['email'] = $row['email'];
-                        $_SESSION['firstName'] = $row['firstName'];
-                        $_SESSION['loggedIn'] = TRUE;
-                        return TRUE;
-                    } else {
-                        echo 'Invalid password.';
-                        return FALSE;
+            if ($email != "" && $password != "") {
+                try {
+                    $query = "select * from `users` where `email`=:email";
+                    $sql = $this->database->prepare($query);
+                    $sql->bindParam('email', $email, PDO::PARAM_STR);
+                    $sql->execute();
+                    $count = $sql->rowCount();
+                    $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+                    if ($count == 1 && !empty($row)) {
+                        if (password_verify($password, $row['password'])) {
+                            session_start();
+                            $_SESSION['email'] = $row['email'];
+                            $_SESSION['firstName'] = $row['firstName'];
+                            $_SESSION['loggedIn'] = TRUE;
+                            return TRUE;
+                        } else {
+                            return "Incorrect email address or password, please try again.";
+                        }
                     }
+                } catch (PDOException $e) {
+                    echo "Error : " . $e->getMessage();
                 }
-            } catch (PDOException $e) {
-                echo "Error : ".$e->getMessage();
             }
         }
     }
-
 
 }

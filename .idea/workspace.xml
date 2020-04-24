@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/app/routes/user-cp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/user-cp-loggedin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/user-cp-loggedout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,19 +84,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\fussee\assets" />
-      <recent name="D:\xampp\htdocs\fussee\assets\icons" />
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="D:\xampp\htdocs\fussee\css" />
-      <recent name="D:\xampp\htdocs\fussee" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
       <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\routes" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\fussee\assets" />
+      <recent name="D:\xampp\htdocs\fussee\assets\icons" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="D:\xampp\htdocs\fussee\css" />
+      <recent name="D:\xampp\htdocs\fussee" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -127,7 +133,7 @@
       <workItem from="1579699743478" duration="10785000" />
       <workItem from="1579866321369" duration="1992000" />
       <workItem from="1587737888844" duration="15973000" />
-      <workItem from="1587758293744" duration="793000" />
+      <workItem from="1587758293744" duration="1771000" />
     </task>
     <servers />
   </component>

@@ -272,3 +272,17 @@ object{
 #smallText {
 	font-size: 5px;
 }
+
+.loggedInUser {
+	white-space: nowrap;
+}
+
+.loggedInUser object {
+	margin-right: 5px;
+	width: 20px;
+}
+
+.loggedInUser * {
+	display: inline;
+	vertical-align: middle;
+}

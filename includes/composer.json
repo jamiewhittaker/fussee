@@ -1,6 +1,6 @@
 {
-  "name": "m2m-slim/m2m-slim",
-  "description": "communicates with EE M2M server",
+  "name": "fussee/fussee",
+  "description": "A recipe search engine",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [

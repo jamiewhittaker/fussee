@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee - About{% endblock %}
+{% block content %}
+    <div id="wrapper">
+        <body>
+
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a href="homepage">Home</a>
+                <a class="active" href="about">About</a>
+                <a href="browse">Browse</a>
+                <a href="user-cp">
+                    <div class="loggedInUser">
+                        <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                    {{ firstName }}
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <script>
+            let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+
+            function getRandomImage() {
+                let folderPath = "assets/";
+                let num = Math.floor( Math.random() * images.length);
+                let image = images[num];
+                let imgStr = '<img src="' + folderPath + image + '" alt = "">';
+                document.write(imgStr);
+                document.close();
+            }
+        </script>
+
+        <div id="image"><script type="text/javascript">getRandomImage();</script></div>
+
+        <div id="summary">
+
+        <p>
+            Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
+            Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
+            and Fussee will return recipes for you that match your search criteria.
+            <br><br>
+            The Fussee project was conceived by Jamie Whittaker in 2019 for his final year project at De Montfort University, Leicester.
+            It was completed in 2020.
+            Fussee is driven by the following technologies:
+
+            <ul>
+                <li>PHP</li>
+                <li>SLIM micro-framework</li>
+                <li>TWIG template engine</li>
+                <li>MySQL database</li>
+            </ul>
+            <br>
+            All images used are royalty free images from <a href="https://unsplash.com/">Unsplash</a>.
+        </p>
+
+    </div>
+
+    </body>
+    </div>
+{% endblock %}

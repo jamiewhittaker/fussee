@@ -56,7 +56,13 @@ class UserDatabaseWrapper
                         throw new \PDOException ("Error");
                     }
 
+                    session_start();
+                    $_SESSION["email"] = $user->getEmail();
+                    $_SESSION["firstName"] = $user->getFirstName();
+                    $_SESSION["loggedIn"] = TRUE;
+
                     return true;
+
                 }
             }
 

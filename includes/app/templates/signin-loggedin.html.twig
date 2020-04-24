@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee{% endblock %}
+{% block content %}
+    <div id="wrapper">
+        <body>
+
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a href="homepage">Home</a>
+                <a href="about">About</a>
+                <a href="browse">Browse</a>
+                <a href="user-cp">
+                    <div class="loggedInUser">
+                        <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                        {{ firstName }}
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        You are already logged in. You do not have permission to use this page.
+
+        </body>
+    </div>
+{% endblock %}

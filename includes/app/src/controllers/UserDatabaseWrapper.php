@@ -130,6 +130,8 @@ class UserDatabaseWrapper
                         } else {
                             return "Incorrect email address or password, please try again.";
                         }
+                    } else {
+                        return "Incorrect email address or password, please try again.";
                     }
                 } catch (PDOException $e) {
                     echo "Error : " . $e->getMessage();

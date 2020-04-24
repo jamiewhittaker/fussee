@@ -321,6 +321,15 @@ object{
 	background-color: #ddd;
 }
 
+.dropdown-content i {
+	margin-right: 5px;
+	margin-left: -5px;
+}
+
+.dropdown-content .fas {
+	color: #00aa55;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
 	display: block;

@@ -27,15 +27,18 @@
         </div>
 
         <div id="user-cp">
-            <h1>{{ firstName }}'s ADMIN Control Panel</h1>
+            <div id="heading1">{{ firstName }}'s ADMIN Control Panel</div>
 
-            <h2>Make Admin</h2>
-            <p>Give a user administrator privileges.</p>
-            <form method="post">
-                Email Address:<br>
-                <input type="email" name="email"><br><br>
-                <button name="makeAdminSubmit">Submit</button>
-            </form>
+            <div id="option1">
+                <span id="option-title">Make Admin</span>
+                <p>Give a user administrator privileges.</p>
+                <form method="post">
+                    <label for="email">User's email address:</label>
+                    <input type="email" name="email"><br><br>
+                    <button name="makeAdminSubmit">Submit</button>
+                </form>
+            </div>
+
 
         </div>
 

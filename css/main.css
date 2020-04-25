@@ -311,7 +311,7 @@ object{
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 	margin-top: 48px;
-    min-width: 116px;
+    min-width: 118px;
 }
 
 /* Links inside the dropdown */
@@ -379,14 +379,16 @@ object{
 
 #user-cp {
     margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    min-height: 100%;
+	margin-right: auto;
+	width: 95%;
     margin-bottom: 100px;
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 15px;
 }
 
 #user-cp input {
-    width: 100%;
+    width: 99%;
 }
 
 #user-cp button {
@@ -396,6 +398,25 @@ object{
     display: block;
 }
 
-#user-cp form {
-    margin-bottom: 60px;
+#heading1 {
+	font-weight: bold;
+	font-size: 24px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+
+#option-title {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#option1, #option2 {
+	padding: 10px 10px;
+	margin-bottom: 10px;
+}
+
+#option1 {
+	background-color: #ebebeb;
 }

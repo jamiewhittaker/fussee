@@ -27,3 +27,22 @@ $app->get('/admin-cp', function(Request $request, Response $response)
     }
 
 })->setName('/admin-cp' );
+
+$app->post('/admin-cp', function(Request $request, Response $response) {
+
+    $db = new UserDatabaseWrapper();
+
+    if (isset($_POST['makeAdminSubmit'])) {
+        $makeAdminResult = $db->makeAdmin();
+
+        if ($makeAdminResult === true) {
+            $arr["success"] = "You have successfully given that account administrative privileges.";
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+        } else {
+            $arr["error"] = $makeAdminResult;
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+        }
+    }
+});

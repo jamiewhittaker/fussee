@@ -45,4 +45,18 @@ $app->post('/admin-cp', function(Request $request, Response $response) {
             return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
         }
     }
+
+    if (isset($_POST['removeAdminSubmit'])) {
+        $removeAdminResult = $db->removeAdmin();
+
+        if ($removeAdminResult === true) {
+            $arr["success"] = "You have successfully removed that account's administrative privileges.";
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+        } else {
+            $arr["error"] = $removeAdminResult;
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+        }
+    }
 });

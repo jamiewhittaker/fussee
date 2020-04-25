@@ -308,4 +308,36 @@ class UserDatabaseWrapper
             }
         }
     }
+
+    public function removeAdmin(){
+        $email = trim($_POST['email']);
+
+        if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
+            return "Account information cannot contain special characters";
+        } elseif (isset($email) === true && $email === '') {
+            return "Please enter an email address";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "Please enter a valid email address";
+        } else {
+            $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $query = "select * from `users` where `email`=:email";
+            $sql = $this->database->prepare($query);
+            $sql->bindParam('email', $email, PDO::PARAM_STR);
+            $sql->execute();
+            $count = $sql->rowCount();
+
+            if ($count > 0) {
+                $query = "UPDATE `users` SET isAdmin = 0 WHERE email = :email";
+                $sql = $this->database->prepare($query);
+                $sql->bindParam('email', $email, PDO::PARAM_STR);
+                $sql->execute();
+                return TRUE;
+            }
+            else{
+                return "User does not exist";
+            }
+        }
+    }
 }

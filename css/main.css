@@ -398,12 +398,16 @@ object{
     display: block;
 }
 
-#heading1 {
-	font-weight: bold;
+#heading1, #heading1-admin {
+	font-weight: bolder;
 	font-size: 24px;
 	margin-left: 10px;
 	margin-bottom: 20px;
 	margin-top: 20px;
+}
+
+#heading1-admin {
+	color: red;
 }
 
 

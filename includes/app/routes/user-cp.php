@@ -32,9 +32,39 @@ $app->post('/user-cp', function(Request $request, Response $response){
 
         if ($changeEmailResult === true){
             $arr["success"] = "You have successfully changed your email address";
+            $arr["firstName"] = $_SESSION['firstName'];
             return $this->view->render($response, 'user-cp-success.html.twig', $arr);
         } else {
             $arr["error"] = $changeEmailResult;
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'user-cp-error.html.twig', $arr);
+        }
+    }
+
+    if (isset($_POST['changePasswordSubmit'])) {
+        $changePasswordResult = $db->changePassword();
+
+        if ($changePasswordResult === true){
+            $arr["success"] = "You have successfully changed your password";
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'user-cp-success.html.twig', $arr);
+        } else {
+            $arr["error"] = $changePasswordResult;
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'user-cp-error.html.twig', $arr);
+        }
+    }
+
+    if (isset($_POST['changeFirstNameSubmit'])) {
+        $changeFirstNameResult = $db->changeFirstName();
+
+        if ($changeFirstNameResult === true){
+            $arr["success"] = "You have successfully changed your first name that is displayed on the website.";
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'user-cp-success.html.twig', $arr);
+        } else {
+            $arr["error"] = $changeFirstNameResult;
+            $arr["firstName"] = $_SESSION['firstName'];
             return $this->view->render($response, 'user-cp-error.html.twig', $arr);
         }
     }

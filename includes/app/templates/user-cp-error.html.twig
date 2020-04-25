@@ -2,7 +2,6 @@
 {% block title %}Fussee{% endblock %}
 {% block content %}
     <div id="wrapper">
-        <body>
 
         <div class="topnav">
             <div class="logo">fussee</div>
@@ -31,17 +30,39 @@
             <span id="error-message"> {{ error }} </span>
         </div>
 
-        <h1>Email Address Change</h1>
-        <p>Change your email address using the form below.</p>
-        <form method="post">
-            New Email Address:<br>
-            <input type="email" name="newEmail" style="width: 250px"><br><br>
-            Password:<br>
-            <input type="password" name="password" style="width: 250px"><br><br>
-            <button name="changeEmailSubmit">Login</button>
-            <br><br><br><br><br>
-        </form>
+        <div id="user-cp">
+            <h1>{{ firstName }}'s User Control Panel</h1>
 
-        </body>
+            <h2>Email Address Change</h2>
+            <p>Change your email address using the form below.</p>
+
+            <form method="post">
+                New Email Address:<br>
+                <input type="email" name="newEmail"><br><br>
+                Password:<br>
+                <input type="password" name="password"><br><br>
+                <button name="changeEmailSubmit">Submit</button>
+            </form>
+
+            <h2>Password Change</h2>
+            <p>Change your password using the form below.</p>
+            <form method="post">
+                Current password:<br>
+                <input type="password" name="oldPassword"><br><br>
+                New password:<br>
+                <input type="password" name="newPassword"><br><br>
+                <button name="changePasswordSubmit">Submit</button>
+            </form>
+
+            <h2>First Name Change</h2>
+            <p>Change your first name that is displayed on the website using the form below.</p>
+            <form method="post">
+                New First Name:<br>
+                <input type="text" name="newFirstName"><br><br>
+                <button name="changeFirstNameSubmit">Submit</button>
+            </form>
+
+        </div>
+
     </div>
 {% endblock %}

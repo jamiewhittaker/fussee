@@ -125,6 +125,11 @@ class UserDatabaseWrapper
                             session_start();
                             $_SESSION['email'] = $row['email'];
                             $_SESSION['firstName'] = $row['firstName'];
+
+                            if($row['isAdmin'] > 0) {
+                                $_SESSION['isAdmin'] = TRUE;
+                            }
+
                             $_SESSION['loggedIn'] = TRUE;
                             return TRUE;
                         } else {

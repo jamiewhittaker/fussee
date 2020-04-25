@@ -7,3 +7,4 @@ require 'routes/signin.php';
 require 'routes/logout.php';
 require 'routes/contact.php';
 require 'routes/user-cp.php';
+require 'routes/admin-cp.php';

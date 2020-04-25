@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee{% endblock %}
+{% block content %}
+    <div id="wrapper">
+
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a href="homepage">Home</a>
+                <a href="about">About</a>
+                <a href="browse">Browse</a>
+                <div class="dropdown">
+                    <a href="user-cp">
+                        <div class="loggedInUser">
+                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                            {{ firstName }}
+                        </div>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="favourites"><i class="fas fa-heart"></i> Favourites</a>
+                        <a href="user-cp"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="login-error">
+            <span id="error-message"> You are not an administrator. You do not have permission to use this page. </span>
+        </div>
+
+    </div>
+{% endblock %}

@@ -344,37 +344,36 @@ object{
 	display: block;
 }
 
-#login-error, #user-cp-error {
+#login-error, #user-cp-error, #user-cp-success {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
-	padding-top: 15px;
-	width: 95%;
-	height: 35px;
-	background-color: red;
+	width: 92%;
 	color: white;
 	font-size: 14px;
-	border: 2px solid red;
+	border: 1px solid black;
 	border-radius: 10px;
+	height: 20px;
+	line-height: 20px;
+	padding: 15px;
+	font-weight: bold;
+}
+
+#login-error, #user-cp-error {
+	background-color: red;
 }
 
 #user-cp-success {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    padding-top: 15px;
-    width: 95%;
-    height: 35px;
-    background-color: green;
-    color: white;
-    font-size: 14px;
-    border: 2px solid green;
-    border-radius: 10px;
+	background-color: green;
 }
 
+
 #error-message {
-	margin-left: 20px;
 	font-weight: bold;
+	margin-left: 2%;
+	margin-right: 2%;
+	vertical-align: middle;
+	display: inline-block;
 }
 
 #user-cp {

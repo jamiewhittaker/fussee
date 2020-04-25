@@ -385,6 +385,7 @@ object{
 	border-style: solid;
 	border-width: 1px;
 	margin-top: 15px;
+	background-color: #3d3d3d;
 }
 
 #user-cp input {
@@ -402,8 +403,13 @@ object{
 	font-weight: bolder;
 	font-size: 24px;
 	margin-left: 10px;
+	margin-right: 10px;
 	margin-bottom: 20px;
 	margin-top: 20px;
+}
+
+#heading1 {
+	color: white;
 }
 
 #heading1-admin {
@@ -418,9 +424,13 @@ object{
 
 #option1, #option2 {
 	padding: 10px 10px;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 #option1 {
 	background-color: #ebebeb;
+}
+
+#option2 {
+	background-color: rgb(240,240,240);
 }

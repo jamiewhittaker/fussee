@@ -21,3 +21,24 @@ $app->get('/user-cp', function(Request $request, Response $response)
         return $this->view->render($response, 'user-cp-loggedout.html.twig');
     }
 })->setName('/user-cp' );
+
+
+$app->post('/user-cp', function(Request $request, Response $response){
+
+    $db = new UserDatabaseWrapper();
+
+    if (isset($_POST['changeEmailSubmit'])) {
+        $changeEmailResult = $db->changeEmail();
+
+        if ($changeEmailResult === true){
+            $arr["success"] = "You have successfully changed your email address";
+            return $this->view->render($response, 'user-cp-success.html.twig', $arr);
+        } else {
+            $arr["error"] = $changeEmailResult;
+            return $this->view->render($response, 'user-cp-error.html.twig', $arr);
+        }
+    }
+
+
+
+});

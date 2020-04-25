@@ -140,4 +140,69 @@ class UserDatabaseWrapper
         }
     }
 
-}
+
+    public function changeEmail()
+    {
+        $email = $_SESSION['email'];
+        $newEmail = trim($_POST['newEmail']);
+        $password = trim($_POST['password']);
+
+        if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $newEmail)) {
+            return "Account information cannot contain special characters";
+        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
+            return "Account information cannot contain special characters";
+        } elseif (isset($newEmail) === true && $newEmail === '') {
+            return "Please enter an email address";
+        } elseif (isset($password) === true && $password === '') {
+            return "Please enter a password";
+        } elseif (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+            return "Please enter a valid email address";
+        } else {
+
+            $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $findStatement = "SELECT COUNT(*) FROM `users` WHERE email = :newEmail";
+
+            $sql = $this->database->prepare($findStatement);
+
+            $sql->bindParam(':newEmail', $newEmail);
+
+            if ($sql->execute() === false) {
+                throw new \PDOException("Error");
+            } else {
+                $count = $sql->fetchColumn();
+
+                if ($count > 0) {
+                    return "An account is already registered using that email address";
+                } else {
+
+                    if ($newEmail != "" && $password != "") {
+                            $query = "select * from `users` where `email`=:email";
+                            $sql = $this->database->prepare($query);
+                            $sql->bindParam('email', $email, PDO::PARAM_STR);
+                            $sql->execute();
+                            $count = $sql->rowCount();
+                            $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+                            if ($count == 1 && !empty($row)) {
+                                if (password_verify($password, $row['password'])) {
+                                    $query = "UPDATE `users` SET email = :newEmail WHERE email= :email";
+                                    $sql = $this->database->prepare($query);
+                                    $sql->bindParam('email', $email, PDO::PARAM_STR);
+                                    $sql->bindParam('newEmail', $newEmail, PDO::PARAM_STR);
+                                    $sql->execute();
+                                    $_SESSION['email'] = $newEmail;
+                                    return TRUE;
+                                } else {
+                                    return "Incorrect password, please try again.";
+                                }
+                            } else {
+                                return "Incorrect password, please try again.";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

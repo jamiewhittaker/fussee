@@ -335,7 +335,7 @@ object{
 	display: block;
 }
 
-#login-error {
+#login-error, #user-cp-error {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
@@ -347,6 +347,20 @@ object{
 	font-size: 14px;
 	border: 2px solid red;
 	border-radius: 10px;
+}
+
+#user-cp-success {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding-top: 15px;
+    width: 95%;
+    height: 35px;
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    border: 2px solid green;
+    border-radius: 10px;
 }
 
 #error-message {

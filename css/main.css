@@ -433,3 +433,60 @@ object{
 #option2 {
 	background-color: rgb(240,240,240);
 }
+
+#recipe{
+	height: 120px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	background-color: #ebebeb;
+	margin-bottom: 10px;
+	border: 1px solid black;
+
+}
+
+#recipe img {
+	width: 100%;
+}
+
+#recipe a {
+	color: black;
+	text-decoration: none;
+}
+
+#recipeTitle {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#sub-title {
+	font-weight: bold;
+}
+
+#recipeSource {
+	margin-bottom: 24px;
+}
+
+#recipeThumbnail{
+	max-width: 200px;
+	margin-right: 30px;
+}
+
+#page-title {
+	margin-bottom: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#recipePrepTime, #recipeCookTime, #recipeServings {
+	font-size: 12px;
+}
+
+#browse-wrapper {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 95%;
+}

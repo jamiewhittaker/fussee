@@ -38,15 +38,28 @@
             </div>
         </div>
 
+        <div id="browse-wrapper">
+        <div id="page-title">Featured Recipes</div>
+
         {% for recipe in featured %}
-            {{ recipe.recipeTitle }} <br>
-            {{ recipe.recipePrepTime }} <br>
-            {{ recipe.recipeCookTime }} <br>
-            {{ recipe.recipeServings }} <br>
-            {{ recipe.recipeSource }} <br>
-            {{ recipe.recipeURL }} <br>
-            {{ recipe.recipeImageURL }} <br> <br>
+            <div id="recipe">
+                <div id="recipeThumbnail">
+                    <a href="{{ recipe.recipeURL }}">
+                        <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                    </a>
+                </div>
+
+                <div id="recipeInfo">
+                    <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                    <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                    <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                    <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                    <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                </div>
+            </div>
         {% endfor %}
+
+        </div>
     </div>
 
     <script>

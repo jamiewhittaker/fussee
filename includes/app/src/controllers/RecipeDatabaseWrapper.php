@@ -36,45 +36,10 @@ class RecipeDatabaseWrapper
 
             $row = $sql->fetch(PDO::FETCH_ASSOC);
 
-            $recipeInfo = array(
-                "recipeTitle" => $row['recipeTitle'],
-                "recipePrepTime" => $row['recipePrepTime'],
-                "recipeCookTime" => $row['recipeCookTime'],
-                "recipeServings" => $row['recipeServings'],
-                "recipeSource" => $row['recipeSource'],
-                "recipeURL" => $row['recipeURL'],
-                "recipeImageURL" => $row['recipeImageURL'],
-            );
-
-            array_push($featured, $recipeInfo);
+            array_push($featured, $row);
         }
 
         return $featured;
     }
 
-    public function getRecipeInfo($recipeID){
-
-        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
-        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = "select * from `recipes` WHERE `recipeID`=:recipeID";
-        $sql = $this->database->prepare($query);
-        $sql->bindParam('recipeID', $recipeID);
-        $sql->execute();
-
-        $row = $sql->fetch(PDO::FETCH_ASSOC);
-
-        $recipeInfo = array(
-            "recipeTitle" => $row['recipeTitle'],
-            "recipePrepTime" => $row['recipePrepTime'],
-            "recipeCookTime" => $row['recipeCookTime'],
-            "recipeServings" => $row['recipeServings'],
-            "recipeSource" => $row['recipeSource'],
-            "recipeURL" => $row['recipeURL'],
-            "recipeImageURL" => $row['recipeImageURL'],
-        );
-
-        return $recipeInfo;
-
-    }
 }

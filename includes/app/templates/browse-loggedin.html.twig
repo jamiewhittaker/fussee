@@ -38,7 +38,15 @@
             </div>
         </div>
 
-        <p>test test</p>
+        {% for recipe in featured %}
+            {{ recipe.recipeTitle }} <br>
+            {{ recipe.recipePrepTime }} <br>
+            {{ recipe.recipeCookTime }} <br>
+            {{ recipe.recipeServings }} <br>
+            {{ recipe.recipeSource }} <br>
+            {{ recipe.recipeURL }} <br>
+            {{ recipe.recipeImageURL }} <br> <br>
+        {% endfor %}
     </div>
 
     <script>

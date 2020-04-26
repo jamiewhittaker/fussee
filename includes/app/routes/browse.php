@@ -32,7 +32,7 @@ $app->post('/browse', function(Request $request, Response $response) {
         $searchResult = $db->searchRecipesOneTag($tagsArray[0]);
     }
 
-
+    $arr["resultNumber"] = count($searchResult);
     $arr["searched"] = $tags;
     $arr["search"] = $searchResult;
     $arr["firstName"] = $_SESSION["firstName"];

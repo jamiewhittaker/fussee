@@ -28,7 +28,7 @@ $app->post('/browse', function(Request $request, Response $response) {
     $db = new RecipeDatabaseWrapper();
 
 
-    if (count($tags) === 1){
+    if (count($tagsArray) === 1){
         $searchResult = $db->searchRecipesOneTag($tagsArray[0]);
     }
 

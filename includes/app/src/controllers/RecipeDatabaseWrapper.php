@@ -42,4 +42,24 @@ class RecipeDatabaseWrapper
         return $featured;
     }
 
+
+    public function searchRecipesOneTag($tag){
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query =
+            "WITH resultSet AS (
+            SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :tag, '%')
+            )
+            
+            SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('tag', $tag);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+
 }

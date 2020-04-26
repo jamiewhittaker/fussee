@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/search.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dumpAutoload D:/xampp/htdocs/fussee2/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="dumpAutoload D:/xampp/htdocs/fussee2/includes/composer.json" value="--no-interaction --ansi --verbose" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes/app/src/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes/app/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -81,8 +82,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
       <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
+      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
       <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
       <recent name="D:\xampp\htdocs\m2m-slim\app\routes" />
@@ -131,7 +132,7 @@
       <workItem from="1587737888844" duration="15973000" />
       <workItem from="1587758293744" duration="1771000" />
       <workItem from="1587820714576" duration="20909000" />
-      <workItem from="1587898074249" duration="6136000" />
+      <workItem from="1587898074249" duration="15430000" />
     </task>
     <servers />
   </component>

@@ -23,8 +23,19 @@ $app->get('/browse', function(Request $request, Response $response)
 
 $app->post('/browse', function(Request $request, Response $response) {
     $tags = $_POST['ingredients'];
-    return $this->view->render($response, 'test.html.twig',
-        [
-            'ingredients' => $tags
-        ]);
+    $tagsArray = explode (",", $tags);
+
+    $db = new RecipeDatabaseWrapper();
+
+
+    if (count($tags) === 1){
+        $searchResult = $db->searchRecipesOneTag($tagsArray[0]);
+    }
+
+
+    $arr["searched"] = $tags;
+    $arr["search"] = $searchResult;
+    $arr["firstName"] = $_SESSION["firstName"];
+
+    return $this->view->render($response, 'search.html.twig', $arr);
 });

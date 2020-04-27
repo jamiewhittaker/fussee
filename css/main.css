@@ -471,6 +471,17 @@ object{
 	margin-right: 20px;
 	height: 112px;
 	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
+	min-height: 112px;
+	max-height: 112px;
+}
+
+#recipeThumbnail img {
+	max-height: 112px;
+	max-width: 200px;
+	display: block;
+	margin: auto;
 }
 
 #page-title {

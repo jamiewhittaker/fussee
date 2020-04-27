@@ -32,6 +32,22 @@ $app->post('/browse', function(Request $request, Response $response) {
         $searchResult = $db->searchRecipesOneTag($tagsArray[0]);
     }
 
+    if (count($tagsArray) === 2){
+        $searchResult = $db->searchRecipesTwoTags($tagsArray);
+    }
+
+    if (count($tagsArray) === 3){
+        $searchResult = $db->searchRecipesThreeTags($tagsArray);
+    }
+
+    if (count($tagsArray) === 4){
+        $searchResult = $db->searchRecipesFourTags($tagsArray);
+    }
+
+    if (count($tagsArray) === 5){
+        $searchResult = $db->searchRecipesFiveTags($tagsArray);
+    }
+
     $arr["resultNumber"] = count($searchResult);
     $arr["searched"] = $tags;
     $arr["search"] = $searchResult;

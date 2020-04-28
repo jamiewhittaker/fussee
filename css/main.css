@@ -239,6 +239,27 @@ img {
 	text-align: center;
 }
 
+.searchbox-inputs{
+	display: flex;
+	margin-bottom: 8px;
+}
+
+#search-left {
+	order: 1;
+	width: 50%;
+	padding-right: 5px;
+	color: white;
+}
+
+#search-right {
+	order: 2;
+	width: 50%;
+	padding-left: 5px;
+	color: white;
+}
+
+
+
 .searchArea {
 	background-color: #3d3d3d;
 	padding-top: 2px;
@@ -504,4 +525,40 @@ object{
 #search-terms{
 	font-size: 16px;
 	font-weight: normal;
+}
+
+
+.choices-item-right {
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 20px;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: 500;
+	margin-right: 3.75px;
+	margin-bottom: 3.75px;
+	background-color: red;
+	border: 1px solid black;
+	color: #ffffff;
+	word-break: break-all;
+	box-sizing: border-box;
+}
+
+.choices-dropdown {
+	background-color: white;
+	color: black;
+	font-size: 12px;
+	visibility: hidden;
+}
+
+.choices-dropdown.is-active {
+	visibility: visible;
+}
+
+#search-info {
+	width: 100%;
+	background-color: #4a4a4a;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 12px;
 }

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/choices.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/choices.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +133,8 @@
       <workItem from="1587820714576" duration="20909000" />
       <workItem from="1587898074249" duration="18148000" />
       <workItem from="1587985465173" duration="7238000" />
-      <workItem from="1588086400090" duration="8527000" />
+      <workItem from="1588086400090" duration="8679000" />
+      <workItem from="1588100526837" duration="2290000" />
     </task>
     <servers />
   </component>

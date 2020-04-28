@@ -30,10 +30,11 @@
             <div class="searchHeader">What would you like to eat?</div>
             <div class="searchbox">
                 <form method="post" class="searchbox">
-                    <div class="searchMargin">
-                        <input id="ingredients" type="text" name="ingredients" placeholder="Enter something" value="{{ searched }}">
-                    </div>
+                    <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something" value="{{ yesSearched }}">
+                    <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something" value="{{ noSearched }}">
                     <input type="submit" name="submit" value="Search"/>
+
+
                 </form>
             </div>
         </div>
@@ -64,18 +65,28 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            let firstElement = document.getElementById('ingredients');
-            let choices1 = new Choices(firstElement, {
+            var firstElement = document.getElementById('yesIngredients');
+            var secondElement = document.getElementById('noIngredients');
+
+            var choices1 = new Choices(firstElement, {
                 delimiter: ',',
                 editItems: true,
-                maxItemCount: 5,
+                maxItems: 5,
                 removeItemButton: true,
                 duplicateItemsAllowed: false,
                 allowPaste: false
+            })
 
+            var choices2 = new Choices(secondElement, {
+                delimiter: ',',
+                editItems: true,
+                maxItems: 5,
+                removeItemButton: true,
+                duplicateItemsAllowed: false,
+                allowPaste: false
             })
 
 
-            });
+        });
     </script>
 {% endblock %}

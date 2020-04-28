@@ -59,8 +59,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesTwoTags($tags){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -86,8 +84,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesThreeTags($tags){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -116,8 +112,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesFourTags($tags){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -153,8 +147,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesFiveTags($tags){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -225,8 +217,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesOneYesTwoNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -255,8 +245,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesOneYesThreeNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -287,8 +275,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesOneYesFourNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -321,8 +307,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesOneYesFiveNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -358,7 +342,6 @@ class RecipeDatabaseWrapper
         return $results;
     }
 
-
     public function searchRecipesTwoYesOneNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -393,8 +376,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesTwoYesTwoNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -431,8 +412,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesTwoYesThreeNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -471,8 +450,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesTwoYesFourNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -512,8 +489,6 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-
-
     public function searchRecipesTwoYesFiveNo($yesTags, $noTags) {
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -555,6 +530,731 @@ class RecipeDatabaseWrapper
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
+
+    public function searchRecipesThreeYesOneNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+            WITH resultSet2 AS (
+            WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+            
+            SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+            WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+            )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%')
+            
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesThreeYesTwoNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+            WITH resultSet2 AS (
+            WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+            
+            SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+            WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+            )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%')
+            
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesThreeYesThreeNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+            WITH resultSet2 AS (
+            WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+            
+            SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+            WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+            )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%')
+            
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesThreeYesFourNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+            WITH resultSet2 AS (
+            WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+            
+            SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+            WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+            )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%')
+            
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesThreeYesFiveNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+            WITH resultSet2 AS (
+            WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+            
+            SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+            WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+            )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%')
+            
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%') OR `ingredient` LIKE concat('%', :noTag5, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+        $sql->bindParam('noTag5', $noTags[4]);
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function searchRecipesFourYesOneNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFourYesTwoNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFourYesThreeNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFourYesFourNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFourYesFiveNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%') OR `ingredient` LIKE concat('%', :noTag5, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+        $sql->bindParam('noTag5', $noTags[4]);
+
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function searchRecipesFiveYesOneNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet4 AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet4
+        WHERE ingredients.recipeID = resultSet4.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag5, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+        $sql->bindParam('yesTag5', $yesTags[4]);
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFiveYesTwoNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet4 AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet4
+        WHERE ingredients.recipeID = resultSet4.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag5, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+        $sql->bindParam('yesTag5', $yesTags[4]);
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFiveYesThreeNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet4 AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet4
+        WHERE ingredients.recipeID = resultSet4.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag5, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+        $sql->bindParam('yesTag5', $yesTags[4]);
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFiveYesFourNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet4 AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet4
+        WHERE ingredients.recipeID = resultSet4.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag5, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+        $sql->bindParam('yesTag5', $yesTags[4]);
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+    public function searchRecipesFiveYesFiveNo($yesTags, $noTags) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "
+        WITH finalResultSet AS (
+        
+        WITH yesResultSet AS (
+        WITH resultSet4 AS (
+        WITH resultSet3 AS (
+        WITH resultSet2 AS (
+        WITH resultSet AS (SELECT * FROM `ingredients` WHERE `ingredient` LIKE concat('%', :yesTag1, '%'))
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet
+        WHERE ingredients.recipeID = resultSet.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag2, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet2
+        WHERE ingredients.recipeID = resultSet2.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag3, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet3
+        WHERE ingredients.recipeID = resultSet3.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag4, '%') 
+        )
+        
+        SELECT DISTINCT ingredients.recipeID FROM ingredients, resultSet4
+        WHERE ingredients.recipeID = resultSet4.recipeID AND ingredients.ingredient LIKE concat('%', :yesTag5, '%') 
+        ), noResultSet AS (
+        SELECT DISTINCT `recipeID` from `ingredients` WHERE `ingredient` LIKE concat('%', :noTag1, '%') OR `ingredient` LIKE concat('%', :noTag2, '%') OR `ingredient` LIKE concat('%', :noTag3, '%') OR `ingredient` LIKE concat('%', :noTag4, '%') OR `ingredient` LIKE concat('%', :noTag5, '%')
+        )
+        
+        SELECT DISTINCT `recipeID` FROM yesResultSet WHERE `recipeID` NOT IN (SELECT recipeID FROM noResultSet)
+        )
+        
+        SELECT * FROM recipes, finalResultSet WHERE recipes.recipeID = finalResultSet.recipeID
+        ";
+
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('yesTag1', $yesTags[0]);
+        $sql->bindParam('yesTag2', $yesTags[1]);
+        $sql->bindParam('yesTag3', $yesTags[2]);
+        $sql->bindParam('yesTag4', $yesTags[3]);
+        $sql->bindParam('yesTag5', $yesTags[4]);
+
+        $sql->bindParam('noTag1', $noTags[0]);
+        $sql->bindParam('noTag2', $noTags[1]);
+        $sql->bindParam('noTag3', $noTags[2]);
+        $sql->bindParam('noTag4', $noTags[3]);
+        $sql->bindParam('noTag5', $noTags[4]);
+
+
+
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+
+
+
+
+
 
 
 

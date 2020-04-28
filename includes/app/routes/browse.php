@@ -54,19 +54,15 @@ $app->post('/browse', function(Request $request, Response $response) {
         if ((count($yesTagsArray) === 1) AND (count($noTagsArray) === 1)) {
             $searchResult = $db->searchRecipesOneYesOneNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 1) AND (count($noTagsArray) === 2)) {
             $searchResult = $db->searchRecipesOneYesTwoNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 1) AND (count($noTagsArray) === 3)) {
             $searchResult = $db->searchRecipesOneYesThreeNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 1) AND (count($noTagsArray) === 4)) {
             $searchResult = $db->searchRecipesOneYesFourNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 1) AND (count($noTagsArray) === 5)) {
             $searchResult = $db->searchRecipesOneYesFiveNo($yesTagsArray, $noTagsArray);
         }
@@ -74,26 +70,67 @@ $app->post('/browse', function(Request $request, Response $response) {
         if ((count($yesTagsArray) === 2) AND (count($noTagsArray) === 1)) {
             $searchResult = $db->searchRecipesTwoYesOneNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 2) AND (count($noTagsArray) === 2)) {
             $searchResult = $db->searchRecipesTwoYesTwoNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 2) AND (count($noTagsArray) === 3)) {
             $searchResult = $db->searchRecipesTwoYesThreeNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 2) AND (count($noTagsArray) === 4)) {
             $searchResult = $db->searchRecipesTwoYesFourNo($yesTagsArray, $noTagsArray);
         }
-
         if ((count($yesTagsArray) === 2) AND (count($noTagsArray) === 5)) {
             $searchResult = $db->searchRecipesTwoYesFiveNo($yesTagsArray, $noTagsArray);
         }
+
+        if ((count($yesTagsArray) === 3) AND (count($noTagsArray) === 1)) {
+            $searchResult = $db->searchRecipesThreeYesOneNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 3) AND (count($noTagsArray) === 2)) {
+            $searchResult = $db->searchRecipesThreeYesTwoNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 3) AND (count($noTagsArray) === 3)) {
+            $searchResult = $db->searchRecipesThreeYesThreeNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 3) AND (count($noTagsArray) === 4)) {
+            $searchResult = $db->searchRecipesThreeYesFourNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 3) AND (count($noTagsArray) === 5)) {
+            $searchResult = $db->searchRecipesThreeYesFiveNo($yesTagsArray, $noTagsArray);
+        }
+
+        if ((count($yesTagsArray) === 4) AND (count($noTagsArray) === 1)) {
+            $searchResult = $db->searchRecipesFourYesOneNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 4) AND (count($noTagsArray) === 2)) {
+            $searchResult = $db->searchRecipesFourYesTwoNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 4) AND (count($noTagsArray) === 3)) {
+            $searchResult = $db->searchRecipesFourYesThreeNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 4) AND (count($noTagsArray) === 4)) {
+            $searchResult = $db->searchRecipesFourYesFourNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 4) AND (count($noTagsArray) === 5)) {
+            $searchResult = $db->searchRecipesFourYesFiveNo($yesTagsArray, $noTagsArray);
+        }
+
+        if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 1)) {
+            $searchResult = $db->searchRecipesFiveYesOneNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 2)) {
+            $searchResult = $db->searchRecipesFiveYesTwoNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 3)) {
+            $searchResult = $db->searchRecipesFiveYesThreeNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 4)) {
+            $searchResult = $db->searchRecipesFiveYesFourNo($yesTagsArray, $noTagsArray);
+        }
+        if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 5)) {
+            $searchResult = $db->searchRecipesFiveYesFiveNo($yesTagsArray, $noTagsArray);
+        }
     }
-
-
-
 
 
     $arr["resultNumber"] = count($searchResult);

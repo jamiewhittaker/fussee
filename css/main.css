@@ -111,8 +111,6 @@ body {
 .searchContainer {
 	margin-top: 25px;
 	font-size: 21px;
-	text-align: center;
-
 	-webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
 	animation: fadein 5s;
 }
@@ -236,7 +234,6 @@ img {
 
 .searchbox {
 	margin-top: 25px;
-	text-align: center;
 }
 
 .searchbox-inputs{
@@ -248,14 +245,12 @@ img {
 	order: 1;
 	width: 50%;
 	padding-right: 5px;
-	color: white;
 }
 
 #search-right {
 	order: 2;
 	width: 50%;
 	padding-left: 5px;
-	color: white;
 }
 
 
@@ -549,6 +544,10 @@ object{
 	color: black;
 	font-size: 12px;
 	visibility: hidden;
+	width: 70%;
+	max-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .choices-dropdown.is-active {
@@ -556,9 +555,15 @@ object{
 }
 
 #search-info {
-	width: 100%;
+	display: inline-block;
 	background-color: #4a4a4a;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding: 5px 5px;
 	font-size: 12px;
+	font-weight: bold;
+	color: white;
+}
+
+#submit-button {
+	text-align: center;
+	margin-top: 5px;
 }

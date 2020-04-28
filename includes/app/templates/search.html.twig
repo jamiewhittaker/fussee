@@ -28,15 +28,25 @@
 
         <div class="searchArea">
             <div class="searchHeader">What would you like to eat?</div>
+
             <div class="searchbox">
                 <form method="post" class="searchbox">
-                    <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something" value="{{ yesSearched }}">
-                    <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something" value="{{ noSearched }}">
-                    <input type="submit" name="submit" value="Search"/>
-
-
+                    <div class="searchbox-inputs">
+                        <div id="search-left">
+                            <div id="search-info">Ingredients to include</div>
+                            <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something" value="{{ yesSearched }}">
+                        </div>
+                        <div id="search-right">
+                            <div id="search-info">Ingredients to exclude</div>
+                            <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something" value="{{ noSearched }}">
+                        </div>
+                    </div>
+                    <div id="submit-button">
+                        <input type="submit" name="submit" value="Search"/>
+                    </div>
                 </form>
             </div>
+
         </div>
 
         <div id="browse-wrapper">

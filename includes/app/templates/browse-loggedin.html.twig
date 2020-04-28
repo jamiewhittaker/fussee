@@ -35,13 +35,16 @@
                     <div id="search-left">
                         <div id="search-info">Ingredients to include</div>
                         <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something">
+
                     </div>
                     <div id="search-right">
                         <div id="search-info">Ingredients to exclude</div>
                         <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something">
                     </div>
                     </div>
-                    <input type="submit" name="submit" value="Search"/>
+                    <div id="submit-button">
+                        <input type="submit" name="submit" value="Search"/>
+                    </div>
                 </form>
             </div>
 
@@ -82,10 +85,7 @@
                 maxItemCount: 5,
                 removeItemButton: true,
                 duplicateItemsAllowed: false,
-                allowPaste: false,
-                classNames: {
-                    listDropdown: 'choices-dropdown',
-                }
+                allowPaste: false
             })
 
             var choices2 = new Choices(secondElement, {
@@ -94,10 +94,7 @@
                 maxItemCount: 5,
                 removeItemButton: true,
                 duplicateItemsAllowed: false,
-                allowPaste: false,
-                classNames: {
-                    listDropdown: 'choices-dropdown',
-                }
+                allowPaste: false
             })
 
 

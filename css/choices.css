@@ -143,13 +143,13 @@
 .choices__inner {
   display: inline-block;
   vertical-align: top;
-  width: 100%;
+  width: 95%;
   background-color: #f9f9f9;
-  padding: 7.5px 0px 3.75px;
+  padding: 7.5px 7.5px 3.75px;
   border: 1px solid #dddddd;
   border-radius: 2.5px;
   font-size: 14px;
-  min-height: 44px;
+  min-height: 25px;
   overflow: hidden;
 }
 
@@ -230,7 +230,7 @@
   visibility: hidden;
   z-index: 1;
   position: absolute;
-  width: 100%;
+  width: 90%;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   top: 100%;
@@ -238,7 +238,7 @@
   border-bottom-left-radius: 2.5px;
   border-bottom-right-radius: 2.5px;
   overflow: hidden;
-  word-break: break-all;
+  word-wrap: break-word;
   will-change: visibility;
 }
 

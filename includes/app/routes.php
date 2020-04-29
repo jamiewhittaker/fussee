@@ -8,3 +8,4 @@ require 'routes/logout.php';
 require 'routes/contact.php';
 require 'routes/user-cp.php';
 require 'routes/admin-cp.php';
+require 'routes/favourites.php';

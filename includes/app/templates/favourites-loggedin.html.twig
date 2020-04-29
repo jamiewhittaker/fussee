@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee - Browse{% endblock %}
+{% block content %}
+
+    <div id="wrapper">
+        <div class="topnav">
+            <div class="logo">fussee</div>
+            <div class="topnav-right">
+                <a href="homepage">Home</a>
+                <a href="about">About</a>
+                <a class="active" href="browse">Browse</a>
+                <div class="dropdown">
+                    <a href="user-cp">
+                        <div class="loggedInUser">
+                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                            {{ firstName }}
+                        </div>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="favourites"><i class="fas fa-heart"></i> Favourites</a>
+                        <a href="user-cp"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="browse-wrapper">
+        <div id="page-title">Favourite Recipes</div>
+
+        {% for recipe in favourites %}
+            <div id="recipe">
+                <div id="recipeThumbnail">
+                    <a href="{{ recipe.recipeURL }}">
+                        <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                    </a>
+                </div>
+
+                <div id="recipeInfo">
+                    <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                    <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                    <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                    <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                    <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                </div>
+            </div>
+        {% endfor %}
+
+        </div>
+    </div>
+
+    <script src="search-boxes.js"></script>
+
+{% endblock %}

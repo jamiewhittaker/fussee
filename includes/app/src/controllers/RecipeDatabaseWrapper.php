@@ -41,6 +41,47 @@ class RecipeDatabaseWrapper
         return $featured;
     }
 
+    public function addFavourite($userID, $recipeID){
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $findStatement = "SELECT COUNT(*) FROM `favourites` WHERE userID = :userID AND recipeID = :recipeID";
+        $sql = $this->database->prepare($findStatement);
+        $sql->bindParam(':userID', $userID);
+        $sql->bindParam(':recipeID', $recipeID);
+        $sql->execute();
+
+        $count = $sql->fetchColumn();
+
+        if ($count < 1) {
+            $insertStatement = "INSERT into `favourites` (userID, recipeID) VALUES (:userID, :recipeID)";
+
+            $sql = $this->database->prepare($insertStatement);
+
+            $sql->bindParam(':userID', $userID);
+            $sql->bindParam(':recipeID', $recipeID);
+
+            $sql->execute();
+        }
+
+    }
+
+    public function getFavourites(){
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "WITH resultSet AS (
+            SELECT DISTINCT `recipeID` from `favourites` WHERE `userID` = :userID
+            )
+            
+            SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('userID', $_SESSION['userID']);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
 
     public function searchRecipesOneTag($tag){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);

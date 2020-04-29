@@ -72,6 +72,7 @@
 
                 <div class="favourite" data-id="{{ recipe.recipeID }}">
                     <i class="far fa-heart"></i>
+                    <div class="favourite-text">Add to favourites</div>
                 </div>
             </div>
         {% endfor %}
@@ -86,10 +87,25 @@
         var elements = document.getElementsByClassName("favourite");
 
         var myFunction = function() {
-            this.innerHTML = "<i class=\"fas fa-heart\"></i>";
 
             var attribute = this.getAttribute("data-id");
-            alert(attribute);
+
+            $.ajax({
+                type: 'post',
+                url: 'addfavourite',
+                data: {
+                    'recipeID': attribute,
+                },
+                success: function () {
+                    console.log("Added to DB")
+                },
+                error: function (XMLHttpRequest) {
+                    console.log("Failed to add to DB")
+                }
+            });
+
+            this.innerHTML = "<i class=\"fas fa-heart\"></i>";
+
         };
 
         for (var i = 0; i < elements.length; i++) {

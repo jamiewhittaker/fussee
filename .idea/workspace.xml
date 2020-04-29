@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/search-boxes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/app/routes/favourites.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/UserDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/search.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,19 +86,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
-      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
-      <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
-      <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
-      <recent name="D:\xampp\htdocs\m2m-slim\app\routes" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\fussee\assets" />
       <recent name="D:\xampp\htdocs\fussee\assets\icons" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="D:\xampp\htdocs\fussee\css" />
       <recent name="D:\xampp\htdocs\fussee" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
+      <recent name="D:\xampp\htdocs\fussee\includes\app\routes" />
+      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
+      <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
+      <recent name="D:\xampp\htdocs\m2m-slim\app\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -139,7 +141,7 @@
       <workItem from="1587985465173" duration="7238000" />
       <workItem from="1588086400090" duration="8679000" />
       <workItem from="1588100526837" duration="7184000" />
-      <workItem from="1588112075738" duration="4574000" />
+      <workItem from="1588112075738" duration="7109000" />
     </task>
     <servers />
   </component>
@@ -206,5 +208,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.52.1920.1040@0.0.1920.1040" timestamp="1578749765019" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php</url>
+          <line>16</line>
+          <properties>
+            <option name="className" value="\App\controllers\RecipeDatabaseWrapper" />
+            <option name="methodName" value="getFeatured" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

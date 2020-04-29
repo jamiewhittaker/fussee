@@ -141,3 +141,13 @@ $app->post('/browse', function(Request $request, Response $response) {
 
     return $this->view->render($response, 'search.html.twig', $arr);
 });
+
+$app->post('/addfavourite', function(Request $request, Response $response) {
+    $userID = $_SESSION['userID'];
+    $recipeID = $_POST['recipeID'];
+
+    $db = new RecipeDatabaseWrapper();
+
+    $db->addFavourite($userID, $recipeID);
+
+});

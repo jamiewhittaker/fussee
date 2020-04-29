@@ -1,34 +1,17 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Fussee{% endblock %}
+{% block title %}Fussee - Browse{% endblock %}
 {% block content %}
-    <div id="wrapper">
 
+    <div id="wrapper">
         <div class="topnav">
             <div class="logo">fussee</div>
             <div class="topnav-right">
-                <a class="active" href="homepage">Home</a>
+                <a href="homepage">Home</a>
                 <a href="about">About</a>
-                <a href="browse">Browse</a>
+                <a class="active" href="browse">Browse</a>
                 <a href="signin">Sign-in</a>
             </div>
         </div>
-
-        <script>
-            let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
-
-            function getRandomImage() {
-                let folderPath = "assets/";
-                let num = Math.floor( Math.random() * images.length);
-                let image = images[num];
-                let imgStr = '<img src="' + folderPath + image + '" alt = "">';
-                document.write(imgStr);
-                document.close();
-            }
-        </script>
-
-        <div id="image"><script type="text/javascript">getRandomImage();</script></div>
-
-
 
         <div class="searchArea">
             <div class="searchHeader">What would you like to eat?</div>
@@ -53,15 +36,34 @@
 
         </div>
 
-        <div id="summary">
-            <p>
-                Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
-                Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
-                and Fussee will return recipes for you that match your search criteria. <br><br>
-            </p>
+        <div id="browse-wrapper">
+            <div id="page-title">Search Results: <span id="search-terms">{{ resultNumber }} results returned</span></div>
+
+        {% for recipe in search %}
+            <div id="recipe">
+                <div class="recipe-left">
+                    <div id="recipeThumbnail">
+                        <a href="{{ recipe.recipeURL }}">
+                            <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                        </a>
+                    </div>
+
+                    <div id="recipeInfo">
+                        <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                        <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                        <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                        <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                        <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
         </div>
+
     </div>
 
     <script src="search-boxes.js"></script>
+
 
 {% endblock %}

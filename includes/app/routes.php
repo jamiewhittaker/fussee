@@ -9,3 +9,4 @@ require 'routes/contact.php';
 require 'routes/user-cp.php';
 require 'routes/admin-cp.php';
 require 'routes/favourites.php';
+require 'routes/search.php';

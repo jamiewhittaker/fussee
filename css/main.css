@@ -476,13 +476,16 @@ object{
     margin-right: 10px;
 }
 
-.favourite {
+.favourite, .favourite-clicked {
     order: 2;
     font-size: 32px;
     text-align: center;
     width: 45px;
     color: #00aa55;
-    cursor: pointer;
+}
+
+.favourite {
+	cursor: pointer;
 }
 
 .favourite i {

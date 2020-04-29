@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-empty.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-empty.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/search-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/search-loggedin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/search-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/search-loggedout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +140,7 @@
       <workItem from="1587985465173" duration="7238000" />
       <workItem from="1588086400090" duration="8679000" />
       <workItem from="1588100526837" duration="7184000" />
-      <workItem from="1588112075738" duration="10396000" />
+      <workItem from="1588112075738" duration="10659000" />
     </task>
     <servers />
   </component>

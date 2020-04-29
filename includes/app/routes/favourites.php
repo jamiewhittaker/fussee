@@ -8,12 +8,16 @@ use App\controllers\RecipeDatabaseWrapper;
 $app->get('/favourites', function(Request $request, Response $response)
 {
     if ($_SESSION["loggedIn"] === TRUE) {
-
         $db = new RecipeDatabaseWrapper();
         $favouritesResult = $db->getFavourites();
 
         $arr["favourites"] = $favouritesResult;
         $arr["firstName"] = $_SESSION["firstName"];
+
+        if (empty($favouritesResult)){
+            return $this->view->render($response, 'favourites-empty.html.twig', $arr);
+        }
+
         return $this->view->render($response, 'favourites-loggedin.html.twig', $arr);
     } else {
         session_destroy();

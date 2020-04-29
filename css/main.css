@@ -460,10 +460,36 @@ object{
 	display: flex;
 	background-color: #ebebeb;
 	margin-bottom: 10px;
-	border: 1px solid black;
-
+	border: 1px solid #3d3d3d;
+    vertical-align: middle;
+    align-items: center;
 }
 
+.recipe-left {
+    display: flex;
+    order: 1;
+    width: 90%;
+}
+
+#recipeInfo {
+    order: 2;
+    margin-right: 10px;
+}
+
+.favourite {
+    order: 2;
+    font-size: 32px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    color: #00aa55;
+    cursor: pointer;
+}
+
+.favourite i {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 #recipe a {
 	color: black;
@@ -491,6 +517,7 @@ object{
 	max-width: 200px;
 	min-height: 112px;
 	max-height: 112px;
+    order: 1;
 }
 
 #recipeThumbnail img {
@@ -556,7 +583,7 @@ object{
 
 #search-info {
 	display: inline-block;
-	background-color: #4a4a4a;
+	background-color: #333;
 	padding: 5px 5px;
 	font-size: 12px;
 	font-weight: bold;

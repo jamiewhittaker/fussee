@@ -21,6 +21,7 @@ $app->get('/homepage', function(Request $request, Response $response)
     if ($_SESSION["loggedIn"] === TRUE) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'homepage-loggedin.html.twig', $arr);
+
     } else {
         session_destroy();
         return $this->view->render($response, 'homepage-loggedout.html.twig');

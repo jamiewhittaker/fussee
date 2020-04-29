@@ -45,12 +45,22 @@
 
         <div class="searchArea">
             <div class="searchHeader">What would you like to eat?</div>
+
             <div class="searchbox">
                 <form method="post" class="searchbox">
-                    <div class="searchMargin">
-                        <input id="ingredients" type="text" name="ingredients" placeholder="Enter something">
+                    <div class="searchbox-inputs">
+                        <div id="search-left">
+                            <div id="search-info">Ingredients to include</div>
+                            <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something" value="{{ yesSearched }}">
+                        </div>
+                        <div id="search-right">
+                            <div id="search-info">Ingredients to exclude</div>
+                            <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something" value="{{ noSearched }}">
+                        </div>
                     </div>
-                    <input type="submit" name="submit" value="Search"/>
+                    <div id="submit-button">
+                        <input type="submit" name="submit" value="Search"/>
+                    </div>
                 </form>
             </div>
         </div>
@@ -66,19 +76,6 @@
 
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var firstElement = document.getElementById('ingredients');
-            var choices1 = new Choices(firstElement, {
-                delimiter: ',',
-                editItems: true,
-                maxItems: 5,
-                removeItemButton: true,
-                duplicateItemsAllowed: false,
-                allowPaste: false
-            })
+    <script src="search-boxes.js"></script>
 
-
-        });
-    </script>
 {% endblock %}

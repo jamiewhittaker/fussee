@@ -66,6 +66,32 @@ class RecipeDatabaseWrapper
 
     }
 
+    public function removeFavourite($userID, $recipeID){
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $findStatement = "SELECT COUNT(*) FROM `favourites` WHERE userID = :userID AND recipeID = :recipeID";
+        $sql = $this->database->prepare($findStatement);
+        $sql->bindParam(':userID', $userID);
+        $sql->bindParam(':recipeID', $recipeID);
+        $sql->execute();
+
+        $count = $sql->fetchColumn();
+
+        if ($count > 0) {
+            $deleteStatement = "DELETE FROM `favourites` WHERE userID = :userID AND recipeID = :recipeID";
+
+            $sql = $this->database->prepare($deleteStatement);
+
+            $sql->bindParam(':userID', $userID);
+            $sql->bindParam(':recipeID', $recipeID);
+
+            $sql->execute();
+        }
+
+    }
+
+
     public function getFavourites(){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

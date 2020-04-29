@@ -19,4 +19,24 @@ $app->get('/favourites', function(Request $request, Response $response)
         session_destroy();
         return $this->view->render($response, 'favourites-loggedout.html.twig');
     }
-})->setName('/browse' );
+})->setName('/favourites' );
+
+$app->post('/addfavourite', function(Request $request, Response $response) {
+    $userID = $_SESSION['userID'];
+    $recipeID = $_POST['recipeID'];
+
+    $db = new RecipeDatabaseWrapper();
+
+    $db->addFavourite($userID, $recipeID);
+
+});
+$app->post('/removefavourite', function(Request $request, Response $response) {
+    $userID = $_SESSION['userID'];
+    $recipeID = $_POST['recipeID'];
+
+    $db = new RecipeDatabaseWrapper();
+
+    $db->removeFavourite($userID, $recipeID);
+
+});
+

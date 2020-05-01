@@ -22,76 +22,94 @@ class UserDatabaseWrapper
 
         if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
             return "Account information cannot contain special characters";
-        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
+        }
+
+        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
             return "Account information cannot contain special characters";
-        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $firstName)) {
+        }
+
+        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $firstName)) {
             return "Account information cannot contain special characters";
-        } elseif (isset($email) === true && $email === '') {
+        }
+
+        if (isset($email) === true && $email === '') {
             return "Please enter an email address";
-        } elseif (isset($password) === true && $password === '') {
+        }
+
+        if (isset($password) === true && $password === '') {
             return "Please enter a password";
-        } elseif (isset($firstName) === true && $firstName === '') {
+        }
+
+        if (isset($firstName) === true && $firstName === '') {
             return "Please enter your first name";
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return "Please enter a valid email address";
-        } else {
+        }
 
+        if (strlen($password) < 8){
+            return "Your password is too short. Please enter a password that is at least 8 characters long";
+        }
 
-            try {
-                $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
-                $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if (strlen($firstName) > 10){
+            return "Your first name is too long. Please enter a name that is a maximum of ten characters long.";
+        }
 
-                $findStatement = "SELECT COUNT(*) FROM `users` WHERE email = :email";
+        try {
+            $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $sql = $this->database->prepare($findStatement);
+            $findStatement = "SELECT COUNT(*) FROM `users` WHERE email = :email";
 
-                $sql->bindParam(':email', $email);
+            $sql = $this->database->prepare($findStatement);
 
-                if ($sql->execute() === false) {
-                    throw new \PDOException("Error");
+            $sql->bindParam(':email', $email);
+
+            if ($sql->execute() === false) {
+                throw new \PDOException("Error");
+            } else {
+                $count = $sql->fetchColumn();
+
+                if ($count > 0) {
+                    return "An account is already registered using that email address";
                 } else {
-                    $count = $sql->fetchColumn();
 
-                    if ($count > 0) {
-                        return "An account is already registered using that email address";
-                    } else {
+                    $insertStatement = "INSERT into `users` (firstName, password, email) VALUES (:firstName, :password, :email)";
 
-                        $insertStatement = "INSERT into `users` (firstName, password, email) VALUES (:firstName, :password, :email)";
+                    $sql = $this->database->prepare($insertStatement);
 
-                        $sql = $this->database->prepare($insertStatement);
+                    $sql->bindParam(':firstName', $firstName);
+                    $sql->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
+                    $sql->bindParam(':email', $email);
 
-                        $sql->bindParam(':firstName', $firstName);
-                        $sql->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
-                        $sql->bindParam(':email', $email);
-
-                        if ($sql->execute() === false) {
-                            throw new \PDOException ("Error");
-                        }
-
-                        $findStatement = "SELECT id FROM `users` WHERE email = :email";
-                        $sql = $this->database->prepare($findStatement);
-                        $sql->bindParam(':email', $email);
-                        $sql->execute();
-
-                        $row = $sql->fetch(PDO::FETCH_ASSOC);
-
-
-                        session_start();
-                        $_SESSION['userID'] = $row['id'];
-                        $_SESSION["email"] = $email;
-                        $_SESSION["firstName"] = $firstName;
-                        $_SESSION["loggedIn"] = TRUE;
-
-                        return true;
-
+                    if ($sql->execute() === false) {
+                        throw new \PDOException ("Error");
                     }
-                }
 
-            } catch (\PDOException $e) {
-                echo $e->getMessage();
+                    $findStatement = "SELECT id FROM `users` WHERE email = :email";
+                    $sql = $this->database->prepare($findStatement);
+                    $sql->bindParam(':email', $email);
+                    $sql->execute();
+
+                    $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+
+                    session_start();
+                    $_SESSION['userID'] = $row['id'];
+                    $_SESSION["email"] = $email;
+                    $_SESSION["firstName"] = $firstName;
+                    $_SESSION["loggedIn"] = TRUE;
+
+                    return true;
+
+                }
             }
 
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
         }
+
     }
 
     public function findUser()
@@ -223,42 +241,54 @@ class UserDatabaseWrapper
 
         if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $oldPassword)) {
             return "Account information cannot contain special characters";
-        } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $newPassword)) {
+        }
+
+        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $newPassword)) {
             return "Account information cannot contain special characters";
-        } elseif (isset($oldPassword) === true && $oldPassword === '') {
+        }
+
+        if (isset($oldPassword) === true && $oldPassword === '') {
             return "Please enter a password";
-        } elseif (isset($newPassword) === true && $newPassword === '') {
+        }
+
+        if (isset($newPassword) === true && $newPassword === '') {
             return "Please enter a password";
-        } else {
+        }
 
-                $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
-                $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if (strlen($newPassword) < 8){
+            return "Your new password is too short. Please enter a password that is at least 8 characters long";
+        }
 
-                if ($email != "" && $oldPassword != "") {
-                        $query = "select * from `users` where `email`=:email";
-                        $sql = $this->database->prepare($query);
-                        $sql->bindParam('email', $email, PDO::PARAM_STR);
-                        $sql->execute();
-                        $count = $sql->rowCount();
-                        $row = $sql->fetch(PDO::FETCH_ASSOC);
 
-                        if ($count == 1 && !empty($row)) {
-                            if (password_verify($oldPassword, $row['password'])) {
-                                $query = "UPDATE `users` SET password = :newPassword WHERE email = :email";
-                                $sql = $this->database->prepare($query);
-                                $sql->bindParam('newPassword', password_hash($newPassword, PASSWORD_DEFAULT), PDO::PARAM_STR);
-                                $sql->bindParam('email', $_SESSION['email'], PDO::PARAM_STR);
-                                $sql->execute();
-                                return TRUE;
-                            } else {
-                                return "Incorrect password, please try again.";
-                            }
-                        } else {
-                            return "Incorrect password, please try again.";
-                        }
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        if ($email != "" && $oldPassword != "") {
+            $query = "select * from `users` where `email`=:email";
+            $sql = $this->database->prepare($query);
+            $sql->bindParam('email', $email, PDO::PARAM_STR);
+            $sql->execute();
+            $count = $sql->rowCount();
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+            if ($count == 1 && !empty($row)) {
+                if (password_verify($oldPassword, $row['password'])) {
+                    $query = "UPDATE `users` SET password = :newPassword WHERE email = :email";
+                    $sql = $this->database->prepare($query);
+                    $sql->bindParam('newPassword', password_hash($newPassword, PASSWORD_DEFAULT), PDO::PARAM_STR);
+                    $sql->bindParam('email', $_SESSION['email'], PDO::PARAM_STR);
+                    $sql->execute();
+                    return TRUE;
+                } else {
+                    return "Incorrect password, please try again.";
                 }
+            } else {
+                return "Incorrect password, please try again.";
+            }
         }
     }
+
+
 
     public function changeFirstName()
     {
@@ -266,21 +296,28 @@ class UserDatabaseWrapper
 
         if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $newFirstName)) {
             return "Account information cannot contain special characters";
-        } elseif (isset($newFirstName) === true && $newFirstName === '') {
-            return "Please enter a first name";
-        } else {
-            $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
-            $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $query = "UPDATE `users` SET firstName = :newFirstName WHERE email = :email";
-            $sql = $this->database->prepare($query);
-            $sql->bindParam('newFirstName', $newFirstName, PDO::PARAM_STR);
-            $sql->bindParam('email', $_SESSION['email'], PDO::PARAM_STR);
-            $sql->execute();
-            $_SESSION['firstName'] = $newFirstName;
-            return TRUE;
         }
+
+        if (isset($newFirstName) === true && $newFirstName === '') {
+            return "Please enter a first name";
+        }
+
+        if (strlen($newFirstName) > 10){
+            return "Your new first name is too long. Please enter a first name that is a maximum of 10 characters.";
+        }
+
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "UPDATE `users` SET firstName = :newFirstName WHERE email = :email";
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('newFirstName', $newFirstName, PDO::PARAM_STR);
+        $sql->bindParam('email', $_SESSION['email'], PDO::PARAM_STR);
+        $sql->execute();
+        $_SESSION['firstName'] = $newFirstName;
+        return TRUE;
     }
+
 
     public function makeAdmin(){
         $email = trim($_POST['email']);

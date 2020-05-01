@@ -13,6 +13,30 @@ class RecipeDatabaseWrapper
 {
     private $database;
 
+    public function getBrowse($start) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $findStatement = "SELECT * FROM recipes ORDER BY recipeID ASC LIMIT :start, 20";
+        $sql = $this->database->prepare($findStatement);
+        $sql->bindValue(':start', (int) trim($start), PDO::PARAM_INT);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function getBrowseCount() {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $findStatement = "SELECT COUNT(*) FROM `recipes`";
+        $sql = $this->database->prepare($findStatement);
+        $sql->execute();
+
+        $count = $sql->fetchColumn();
+        return $count;
+    }
 
     public function getFeatured(){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);

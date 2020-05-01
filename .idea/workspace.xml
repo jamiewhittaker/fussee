@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-empty.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-empty.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/search-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/search-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/search-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/search-loggedout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-error.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/signin-loggedout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +137,8 @@
       <workItem from="1587985465173" duration="7238000" />
       <workItem from="1588086400090" duration="8679000" />
       <workItem from="1588100526837" duration="7184000" />
-      <workItem from="1588112075738" duration="10659000" />
+      <workItem from="1588112075738" duration="11065000" />
+      <workItem from="1588334038750" duration="4387000" />
     </task>
     <servers />
   </component>
@@ -213,12 +211,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php</url>
-          <line>16</line>
+          <line>40</line>
           <properties>
             <option name="className" value="\App\controllers\RecipeDatabaseWrapper" />
             <option name="methodName" value="getFeatured" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

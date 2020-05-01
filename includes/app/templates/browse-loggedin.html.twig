@@ -50,29 +50,50 @@
         </div>
 
         <div id="browse-wrapper">
-        <div id="page-title">Featured Recipes</div>
+        <div id="page-title">All Recipes</div>
 
-        {% for recipe in featured %}
+        {% for recipe in browseResult %}
             <div id="recipe">
-                <div id="recipeThumbnail">
-                    <a href="{{ recipe.recipeURL }}">
-                        <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
-                    </a>
+                <div class="recipe-left">
+                    <div id="recipeThumbnail">
+                        <a href="{{ recipe.recipeURL }}">
+                            <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                        </a>
+                    </div>
+
+                    <div id="recipeInfo">
+                        <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                        <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                        <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                        <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                        <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                    </div>
                 </div>
 
-                <div id="recipeInfo">
-                    <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
-                    <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
-                    <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
-                    <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
-                    <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                <div class="favourite" data-id="{{ recipe.recipeID }}">
+                    <i class="far fa-heart"></i>
+                    <div class="favourite-text">Add to favourites</div>
                 </div>
             </div>
         {% endfor %}
+
+            <div id="pagebuttons">
+            {% if (start + 20) > count %}
+                <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
+                {% elseif (start <= 0) %}
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
+                {% else %}
+                    <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
+            {% endif %}
+            </div>
 
         </div>
     </div>
 
     <script src="search-boxes.js"></script>
+
+    <script src="add-favourite.js"></script>
+
 
 {% endblock %}

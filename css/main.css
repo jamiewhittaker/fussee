@@ -26,7 +26,7 @@ body {
     min-height: 100vh;
 	height: 100%;
     position: relative;
-	padding-bottom: 300px;
+	padding-bottom: 20px;
 }
 
 
@@ -605,4 +605,34 @@ object{
     font-size: 10px;
     color: black;
     text-align: center;
+}
+
+#pagebuttons{
+    font-weight: bold;
+    background-color: #00aa55;
+    height: 18px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#pagebuttons span {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#pagebuttons span:hover {
+    color: #3d3d3d;
+}
+
+#pagebuttons a {
+    color: white;
+}
+
+#previous-page{
+    float: left;
+}
+
+#next-page{
+    float: right;
 }

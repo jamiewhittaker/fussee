@@ -39,7 +39,27 @@ $app->post('/search', function(Request $request, Response $response) {
     }
 
     if (($yesTags === "") AND ($noTags === "")) {
-        $arr["error"] = "Search fields empty";
+        $arr["error"] = "Search fields empty, please enter some search tags";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
+    if (count($yesTagsArray) > 5) {
+        $arr["error"] = "Maximum of 5 tags allowed in each field";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
+    if (count($noTagsArray) > 5) {
+        $arr["error"] = "Maximum of 5 tags allowed in each field";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
             return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
@@ -147,26 +167,6 @@ $app->post('/search', function(Request $request, Response $response) {
         }
         if ((count($yesTagsArray) === 5) AND (count($noTagsArray) === 5)) {
             $searchResult = $db->searchRecipesFiveYesFiveNo($yesTagsArray, $noTagsArray);
-        }
-    }
-
-    if (count($yesTagsArray) > 5) {
-        $arr["error"] = "Maximum of 5 tags allowed in each field";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
-        }
-    }
-
-    if (count($noTagsArray) > 5) {
-        $arr["error"] = "Maximum of 5 tags allowed in each field";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
         }
     }
 

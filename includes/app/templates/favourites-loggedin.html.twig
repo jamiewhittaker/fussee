@@ -27,32 +27,68 @@
         </div>
 
         <div id="browse-wrapper">
-        <div id="page-title">Favourite Recipes</div>
 
-        {% for recipe in favourites %}
-            <div id="recipe">
-                <div class="recipe-left">
-                    <div id="recipeThumbnail">
-                        <a href="{{ recipe.recipeURL }}">
-                            <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
-                        </a>
+            <div id="page-title">Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} <span id="search-terms">Returned {{ count }} recipes</span></div>
+
+            {% if ( (start + 20 >= count) and (start <= 0) ) %}
+
+            {% elseif (start + 20) > count %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                </div>
+            {% elseif (start <= 0) %}
+                <div id="pagebuttons-top">
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% else %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% endif %}
+
+
+            {% for recipe in favouritesResult %}
+                <div id="recipe">
+                    <div class="recipe-left">
+                        <div id="recipeThumbnail">
+                            <a href="{{ recipe.recipeURL }}">
+                                <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                            </a>
+                        </div>
+
+                        <div id="recipeInfo">
+                            <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                            <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                            <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                            <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                            <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                        </div>
                     </div>
 
-                    <div id="recipeInfo">
-                        <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
-                        <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
-                        <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
-                        <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
-                        <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                    <div class="favourite" data-id="{{ recipe.recipeID }}">
+                        <i class="fas fa-heart"></i>
+                        <div class="favourite-text">Remove from favourites</div>
                     </div>
                 </div>
+            {% endfor %}
 
-                <div class="favourite" data-id="{{ recipe.recipeID }}">
-                    <i class="fas fa-heart"></i>
-                    <div class="favourite-text">Remove from favourites</div>
+            {% if ( (start + 20 >= count) and (start <= 0) ) %}
+
+            {% elseif (start + 20) > count %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
                 </div>
-            </div>
-        {% endfor %}
+            {% elseif (start <= 0) %}
+                <div id="pagebuttons-top">
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% else %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% endif %}
 
         </div>
     </div>

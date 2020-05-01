@@ -150,6 +150,16 @@ $app->post('/search', function(Request $request, Response $response) {
         }
     }
 
+    if (count($noTagsArray) > 5) {
+        $arr["error"] = "Maximum of 5 tags allowed in each field";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
 
     $arr["resultNumber"] = count($searchResult);
     $arr["yesSearched"] = $yesTags;
@@ -158,7 +168,7 @@ $app->post('/search', function(Request $request, Response $response) {
 
     if (count($searchResult) === 0)
     {
-        $arr["error"] = "No results found";
+        $arr["error"] = "No results found, try using different tags";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
             return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);

@@ -8,17 +8,58 @@ use App\controllers\RecipeDatabaseWrapper;
 $app->get('/favourites', function(Request $request, Response $response)
 {
     if (isset($_SESSION['loggedIn'])) {
+        $start = $request->getQueryParam('start');
         $db = new RecipeDatabaseWrapper();
-        $favouritesResult = $db->getFavourites();
 
-        $arr["favourites"] = $favouritesResult;
-        $arr["firstName"] = $_SESSION["firstName"];
-
-        if (empty($favouritesResult)){
-            return $this->view->render($response, 'favourites-empty.html.twig', $arr);
+        if ($start === null){
+            $favouritesResult = $db->getFavourites(0);
+            $arr["previousPage"] = "favourites?start=0";
+        } else {
+            if (is_numeric($start)) {
+                if (($start % 20) == 0){
+                    $favouritesResult = $db->getFavourites($start);
+                } else {
+                    $arr['error'] = "Start number is invalid";
+                    if (isset($_SESSION['loggedIn'])) {
+                        $arr["firstName"] = $_SESSION['firstName'];
+                        return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                    } else {
+                        return $this->view->render($response, 'favourites-error-loggedout.html.twig', $arr);
+                    }
+                }
+            } else {
+                $arr['error'] = "Start parameter is invalid";
+                if (isset($_SESSION['loggedIn'])) {
+                    $arr["firstName"] = $_SESSION['firstName'];
+                    return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                } else {
+                    return $this->view->render($response, 'favourites-error-loggedout.html.twig', $arr);
+                }
+            }
         }
 
+        $count = $db->getFavouritesCount();
+
+        $arr["favouritesResult"] = $favouritesResult;
+        $arr["start"] = $start;
+        $arr["count"] = $count;
+
+        if ($start <= 0) {
+            $arr["previousPage"] = "favourites?start=0";
+        } else {
+            $arr["previousPage"] = "favourites?start=" . ((string) ($start - 20));
+        }
+
+
+        if (($start + 20) > $count) {
+            $arr["nextPage"] = "favourites?start=" . ((string) ($start));
+        } else {
+            $arr["nextPage"] = "favourites?start=" . ((string) ($start + 20));
+        }
+
+        $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'favourites-loggedin.html.twig', $arr);
+
     } else {
         session_destroy();
         return $this->view->render($response, 'favourites-loggedout.html.twig');

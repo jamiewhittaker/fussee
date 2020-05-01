@@ -111,7 +111,25 @@ class RecipeDatabaseWrapper
     }
 
 
-    public function getFavourites(){
+    public function getFavourites($start){
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "WITH resultSet AS (
+            SELECT DISTINCT `recipeID` from `favourites` WHERE `userID` = :userID ORDER BY recipeID ASC LIMIT :start, 20
+            )
+            
+            SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
+        $sql = $this->database->prepare($query);
+        $sql->bindParam('userID', $_SESSION['userID']);
+        $sql->bindValue(':start', (int) trim($start), PDO::PARAM_INT);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function getFavouritesCount(){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -119,13 +137,13 @@ class RecipeDatabaseWrapper
             SELECT DISTINCT `recipeID` from `favourites` WHERE `userID` = :userID
             )
             
-            SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
+            SELECT COUNT(*) FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
         $sql = $this->database->prepare($query);
         $sql->bindParam('userID', $_SESSION['userID']);
         $sql->execute();
 
-        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
+        $count = $sql->fetchColumn();
+        return $count;
     }
 
     public function searchRecipesOneTag($tag){

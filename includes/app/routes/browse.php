@@ -5,7 +5,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 use App\controllers\RecipeDatabaseWrapper;
 
-$app->get('/browse', function(Request $request, Response $response, $start)
+$app->get('/browse', function(Request $request, Response $response)
 {
     $start = $request->getQueryParam('start');
     $db = new RecipeDatabaseWrapper();

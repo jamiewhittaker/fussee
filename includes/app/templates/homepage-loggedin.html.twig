@@ -66,17 +66,40 @@
 
         </div>
 
-        <div id="summary">
-            <p>
-                Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
-                Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
-                and Fussee will return recipes for you that match your search criteria. <br><br>
-            </p>
-        </div>
+        <div id="browse-wrapper">
+            <div id="page-title">Featured Recipes</div>
 
+            {% for recipe in featured %}
+                <div id="recipe">
+                    <div class="recipe-left">
+                        <div id="recipeThumbnail">
+                            <a href="{{ recipe.recipeURL }}">
+                                <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
+                            </a>
+                        </div>
+
+                        <div id="recipeInfo">
+                            <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
+                            <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
+                            <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
+                            <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
+                            <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                        </div>
+                    </div>
+
+                    <div class="favourite" data-id="{{ recipe.recipeID }}">
+                        <i class="far fa-heart"></i>
+                        <div class="favourite-text">Add to favourites</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
     </div>
 
     <script src="search-boxes.js"></script>
+
+    <script src="add-favourite.js"></script>
+
 
 {% endblock %}

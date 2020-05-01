@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/favourites-error-loggedin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/routes/favourites.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/favourites.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites-loggedin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +135,7 @@
       <workItem from="1588086400090" duration="8679000" />
       <workItem from="1588100526837" duration="7184000" />
       <workItem from="1588112075738" duration="11065000" />
-      <workItem from="1588334038750" duration="13924000" />
+      <workItem from="1588334038750" duration="14097000" />
     </task>
     <servers />
   </component>

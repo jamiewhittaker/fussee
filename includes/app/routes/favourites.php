@@ -20,21 +20,13 @@ $app->get('/favourites', function(Request $request, Response $response)
                     $favouritesResult = $db->getFavourites($start);
                 } else {
                     $arr['error'] = "Start number is invalid";
-                    if (isset($_SESSION['loggedIn'])) {
-                        $arr["firstName"] = $_SESSION['firstName'];
-                        return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
-                    } else {
-                        return $this->view->render($response, 'favourites-error-loggedout.html.twig', $arr);
-                    }
+                    $arr["firstName"] = $_SESSION['firstName'];
+                    return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
                 }
             } else {
                 $arr['error'] = "Start parameter is invalid";
-                if (isset($_SESSION['loggedIn'])) {
-                    $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
-                } else {
-                    return $this->view->render($response, 'favourites-error-loggedout.html.twig', $arr);
-                }
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
             }
         }
 

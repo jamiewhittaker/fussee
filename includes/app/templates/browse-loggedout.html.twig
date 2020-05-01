@@ -57,6 +57,17 @@
                 </div>
             {% endfor %}
 
+            <div id="pagebuttons">
+                {% if (start + 20) > count %}
+                    <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
+                {% elseif (start <= 0) %}
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
+                {% else %}
+                    <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
+                {% endif %}
+            </div>
+
         </div>
     </div>
 

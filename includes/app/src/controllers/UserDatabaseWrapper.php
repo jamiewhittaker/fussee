@@ -13,18 +13,12 @@ use App\models\User;
 class UserDatabaseWrapper
 {
     private $database;
-    private $user;
 
     public function insertUser()
     {
-        $user = $this->user = new User(
-            trim($_POST['registerFirstName']),
-            trim($_POST['registerPassword']),
-            trim($_POST['registerEmail']));
-
-        $firstName = $user->getFirstName();
-        $password = $user->getPassword();
-        $email = $user->getEmail();
+        $firstName = trim($_POST['registerFirstName']);
+        $password = trim($_POST['registerPassword']);
+        $email = trim($_POST['registerEmail']);
 
         if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
             return "Account information cannot contain special characters";
@@ -74,9 +68,18 @@ class UserDatabaseWrapper
                             throw new \PDOException ("Error");
                         }
 
+                        $findStatement = "SELECT id FROM `users` WHERE email = :email";
+                        $sql = $this->database->prepare($findStatement);
+                        $sql->bindParam(':email', $email);
+                        $sql->execute();
+
+                        $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+
                         session_start();
-                        $_SESSION["email"] = $user->getEmail();
-                        $_SESSION["firstName"] = $user->getFirstName();
+                        $_SESSION['userID'] = $row['id'];
+                        $_SESSION["email"] = $email;
+                        $_SESSION["firstName"] = $firstName;
                         $_SESSION["loggedIn"] = TRUE;
 
                         return true;

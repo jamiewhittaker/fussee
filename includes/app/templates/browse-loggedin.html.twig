@@ -50,7 +50,7 @@
         </div>
 
         <div id="browse-wrapper">
-            <div id="page-title">All Recipes <span id="search-terms">Returned {{ count }} recipes in {{ (count / 20)|round(0, 'ceil') }} pages</span></div>
+            <div id="page-title">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} <span id="search-terms">Returned {{ count }} recipes</span></div>
 
         {% for recipe in browseResult %}
             <div id="recipe">
@@ -78,14 +78,14 @@
         {% endfor %}
 
             <div id="pagebuttons">
-            {% if (start + 20) > count %}
-                <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
+                {% if (start + 20) > count %}
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
                 {% elseif (start <= 0) %}
-                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
                 {% else %}
-                    <a href="{{ previousPage }}"><span id="previous-page">Previous Page</span></a>
-                    <a href="{{ nextPage }}"><span id="next-page">Next Page</span></a>
-            {% endif %}
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                {% endif %}
             </div>
 
         </div>

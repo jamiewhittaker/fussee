@@ -7,7 +7,7 @@ use App\controllers\RecipeDatabaseWrapper;
 
 $app->get('/favourites', function(Request $request, Response $response)
 {
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $db = new RecipeDatabaseWrapper();
         $favouritesResult = $db->getFavourites();
 

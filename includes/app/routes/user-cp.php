@@ -13,7 +13,7 @@ use App\controllers\UserDatabaseWrapper;
 
 $app->get('/user-cp', function(Request $request, Response $response)
 {
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'user-cp-loggedin.html.twig', $arr);
     } else {

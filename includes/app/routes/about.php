@@ -7,7 +7,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 $app->get('/about', function(Request $request, Response $response)
 {
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'about-loggedin.twig', $arr);
     } else {

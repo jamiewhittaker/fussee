@@ -36,7 +36,7 @@ $app->get('/browse', function(Request $request, Response $response, $start)
         $arr["nextPage"] = "browse?start=" . ((string) ($start + 20));
     }
 
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'browse-loggedin.html.twig', $arr);
     } else {

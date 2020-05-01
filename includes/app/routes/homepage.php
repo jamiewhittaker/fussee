@@ -14,7 +14,7 @@ $app->get('/', function(Request $request, Response $response)
     $featuredResult = $db->getFeatured();
     $arr["featured"] = $featuredResult;
 
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'homepage-loggedin.html.twig', $arr);
     } else {
@@ -29,7 +29,7 @@ $app->get('/homepage', function(Request $request, Response $response)
     $featuredResult = $db->getFeatured();
     $arr["featured"] = $featuredResult;
 
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'homepage-loggedin.html.twig', $arr);
 

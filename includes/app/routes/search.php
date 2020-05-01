@@ -124,7 +124,7 @@ $app->post('/search', function(Request $request, Response $response) {
     $arr["firstName"] = $_SESSION["firstName"];
 
 
-    if ($_SESSION["loggedIn"] === TRUE) {
+    if (isset($_SESSION['loggedIn'])) {
         return $this->view->render($response, 'search-loggedin.html.twig', $arr);
     } else {
         session_destroy();

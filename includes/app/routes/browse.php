@@ -14,7 +14,27 @@ $app->get('/browse', function(Request $request, Response $response, $start)
         $browseResult = $db->getBrowse(0);
         $arr["previousPage"] = "browse?start=0";
     } else {
-        $browseResult = $db->getBrowse($start);
+        if (is_numeric($start)) {
+            if (($start % 20) == 0){
+                $browseResult = $db->getBrowse($start);
+            } else {
+                $arr['error'] = "Start number is invalid";
+                if (isset($_SESSION['loggedIn'])) {
+                    $arr["firstName"] = $_SESSION['firstName'];
+                    return $this->view->render($response, 'browse-error-loggedin.html.twig', $arr);
+                } else {
+                    return $this->view->render($response, 'browse-error-loggedout.html.twig', $arr);
+                }
+            }
+        } else {
+            $arr['error'] = "Start parameter is invalid";
+            if (isset($_SESSION['loggedIn'])) {
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'browse-error-loggedin.html.twig', $arr);
+            } else {
+                return $this->view->render($response, 'browse-error-loggedout.html.twig', $arr);
+            }
+        }
     }
 
     $count = $db->getBrowseCount();

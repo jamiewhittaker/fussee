@@ -168,8 +168,6 @@ $app->post('/search', function(Request $request, Response $response) {
     }
 
 
-
-
     if (isset($_SESSION['loggedIn'])) {
         return $this->view->render($response, 'search-loggedin.html.twig', $arr);
     } else {

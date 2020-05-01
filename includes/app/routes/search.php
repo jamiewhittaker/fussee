@@ -38,6 +38,16 @@ $app->post('/search', function(Request $request, Response $response) {
         }
     }
 
+    if (($yesTags === "") AND ($noTags === "")) {
+        $arr["error"] = "Search fields empty";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
     if ($noTags === "") {
         if (count($yesTagsArray) === 1){
             $searchResult = $db->searchRecipesOneTag($yesTagsArray[0]);

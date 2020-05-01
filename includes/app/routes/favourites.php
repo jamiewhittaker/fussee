@@ -90,6 +90,10 @@ $app->post('/removefavourite', function(Request $request, Response $response) {
     $userID = $_SESSION['userID'];
     $recipeID = $_POST['recipeID'];
 
+    if ((isset($_SESSION['userID'])) === FALSE){
+        return;
+    }
+
     if((is_numeric($userID)) === FALSE) {
         return;
     }

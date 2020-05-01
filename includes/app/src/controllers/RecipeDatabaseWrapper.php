@@ -42,17 +42,25 @@ class RecipeDatabaseWrapper
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query = "select * from `featured`";
-        $sql = $this->database->prepare($query);
-        $sql->execute();
-
         $query = "WITH resultSet AS (
-            SELECT DISTINCT `recipeID` from `featured`
+            SELECT DISTINCT `recipeID` from `featured` ORDER BY timeAdded DESC LIMIT 5
             )
             
             SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";
         $sql = $this->database->prepare($query);
         $sql->bindParam('userID', $_SESSION['userID']);
+        $sql->execute();
+
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function getRandomRecipes() {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "SELECT * FROM recipes ORDER BY RAND() LIMIT 3";
+        $sql = $this->database->prepare($query);
         $sql->execute();
 
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);

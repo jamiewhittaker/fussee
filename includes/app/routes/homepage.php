@@ -26,8 +26,12 @@ $app->get('/', function(Request $request, Response $response)
 $app->get('/homepage', function(Request $request, Response $response)
 {
     $db = new RecipeDatabaseWrapper();
+
     $featuredResult = $db->getFeatured();
     $arr["featured"] = $featuredResult;
+
+    $randomResult = $db->getRandomRecipes();
+    $arr["random"] = $randomResult;
 
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];

@@ -530,10 +530,12 @@ object{
 }
 
 #page-title {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	font-size: 24px;
 	font-weight: bold;
 	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 20px;
 }
 
 #recipePrepTime, #recipeCookTime, #recipeServings {

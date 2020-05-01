@@ -15,7 +15,7 @@ $app->get('/browse', function(Request $request, Response $response)
         $arr["previousPage"] = "browse?start=0";
     } else {
         if (is_numeric($start)) {
-            if (($start % 20) == 0){
+            if ( ( ($start % 20) == 0) AND ($start >= 0) ){
                 $browseResult = $db->getBrowse($start);
             } else {
                 $arr['error'] = "Start number is invalid";

@@ -16,7 +16,7 @@ $app->get('/favourites', function(Request $request, Response $response)
             $arr["previousPage"] = "favourites?start=0";
         } else {
             if (is_numeric($start)) {
-                if (($start % 20) == 0){
+                if ( ( ($start % 20) == 0) AND ($start >= 0) ){
                     $favouritesResult = $db->getFavourites($start);
                 } else {
                     $arr['error'] = "Start number is invalid";
@@ -61,6 +61,10 @@ $app->get('/favourites', function(Request $request, Response $response)
 $app->post('/addfavourite', function(Request $request, Response $response) {
     $userID = $_SESSION['userID'];
     $recipeID = $_POST['recipeID'];
+
+    if ((isset($_SESSION['userID'])) === FALSE){
+        return;
+    }
 
     if((is_numeric($userID)) === FALSE) {
         return;

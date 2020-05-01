@@ -28,7 +28,7 @@
 
         <div id="browse-wrapper">
 
-            <div id="page-title">Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} <span id="search-terms">Returned {{ count }} recipes</span></div>
+            <div id="page-title">{{ firstName }}'s Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} <span id="search-terms">Returned {{ count }} recipes</span></div>
 
             {% if ( (start + 20 >= count) and (start <= 0) ) %}
 

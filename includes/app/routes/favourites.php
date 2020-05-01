@@ -17,6 +17,12 @@ $app->get('/favourites', function(Request $request, Response $response)
         } else {
             if (is_numeric($start)) {
                 if ( ( ($start % 20) == 0) AND ($start >= 0) ){
+                    $count = $db->getFavouritesCount();
+                    if ($start >= $count) {
+                        $arr['error'] = "Start offset greater than number of results";
+                        $arr["firstName"] = $_SESSION['firstName'];
+                        return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                    }
                     $favouritesResult = $db->getFavourites($start);
                 } else {
                     $arr['error'] = "Start number is invalid";

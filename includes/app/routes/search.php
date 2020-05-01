@@ -14,6 +14,30 @@ $app->post('/search', function(Request $request, Response $response) {
 
     $db = new RecipeDatabaseWrapper();
 
+    foreach ($yesTagsArray as $tag) {
+        if ( (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $tag) ) ) {
+            $arr["error"] = "One or more search tags contain invalid special character(s)";
+            if (isset($_SESSION['loggedIn'])){
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            } else {
+                return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            }
+        }
+    }
+
+    foreach ($noTagsArray as $tag) {
+        if ( (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $tag) ) ) {
+            $arr["error"] = "One or more search tags contain invalid special character(s)";
+            if (isset($_SESSION['loggedIn'])){
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            } else {
+                return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            }
+        }
+    }
+
     if ($noTags === "") {
         if (count($yesTagsArray) === 1){
             $searchResult = $db->searchRecipesOneTag($yesTagsArray[0]);
@@ -116,12 +140,34 @@ $app->post('/search', function(Request $request, Response $response) {
         }
     }
 
+    if (count($yesTagsArray) > 5) {
+        $arr["error"] = "Maximum of 5 tags allowed in each field";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
 
     $arr["resultNumber"] = count($searchResult);
     $arr["yesSearched"] = $yesTags;
     $arr["noSearched"] = $noTags;
     $arr["search"] = $searchResult;
-    $arr["firstName"] = $_SESSION["firstName"];
+
+    if (count($searchResult) === 0)
+    {
+        $arr["error"] = "No results found";
+        if (isset($_SESSION['loggedIn'])){
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+        } else {
+            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+        }
+    }
+
+
 
 
     if (isset($_SESSION['loggedIn'])) {

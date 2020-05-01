@@ -549,6 +549,8 @@ object{
 #search-terms{
 	font-size: 16px;
 	font-weight: normal;
+	float: right;
+	margin-top: 5px;
 }
 
 
@@ -607,26 +609,30 @@ object{
     text-align: center;
 }
 
-#pagebuttons{
+#pagebuttons-top, #pagebuttons-bottom{
     font-weight: bold;
     background-color: #00aa55;
     height: 18px;
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-top: 15px;
+	margin-bottom: 10px;
 }
 
-#pagebuttons span {
+#pagebuttons-bottom {
+	margin-top: 10px;
+}
+
+#pagebuttons-top span, #pagebuttons-bottom span {
     margin-right: 10px;
     margin-left: 10px;
 }
 
-#pagebuttons span:hover {
+#pagebuttons-top span:hover, #pagebuttons-bottom span:hover {
     color: #3d3d3d;
 }
 
-#pagebuttons a {
+#pagebuttons-top a, #pagebuttons-bottom a {
     color: white;
 }
 

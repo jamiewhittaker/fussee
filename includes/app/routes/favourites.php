@@ -62,14 +62,31 @@ $app->post('/addfavourite', function(Request $request, Response $response) {
     $userID = $_SESSION['userID'];
     $recipeID = $_POST['recipeID'];
 
+    if((is_numeric($userID)) === FALSE) {
+        return;
+    }
+
+    if((is_numeric($recipeID)) === FALSE) {
+        return;
+    }
+
     $db = new RecipeDatabaseWrapper();
 
     $db->addFavourite($userID, $recipeID);
 
 });
+
 $app->post('/removefavourite', function(Request $request, Response $response) {
     $userID = $_SESSION['userID'];
     $recipeID = $_POST['recipeID'];
+
+    if((is_numeric($userID)) === FALSE) {
+        return;
+    }
+
+    if((is_numeric($recipeID)) === FALSE) {
+        return;
+    }
 
     $db = new RecipeDatabaseWrapper();
 

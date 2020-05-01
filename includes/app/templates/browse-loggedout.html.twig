@@ -37,7 +37,7 @@
         </div>
 
         <div id="browse-wrapper">
-            <div id="page-title">Featured Recipes</div>
+            <div id="page-title">All Recipes <span id="search-terms">Returned {{ count }} recipes in {{ (count / 20)|round(0, 'ceil') }} pages</span></div>
 
             {% for recipe in browseResult %}
                 <div id="recipe">

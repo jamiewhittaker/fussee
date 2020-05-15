@@ -31,7 +31,7 @@ $app->post('/signin', function(Request $request, Response $response){
         $registerResult = $db->insertUser();
 
         if ($registerResult === true){
-           return $this->view->render($response->withRedirect('about'), 'about-loggedin.twig');
+           return $this->view->render($response->withRedirect('homepage'), 'homepage-loggedin.html.twig');
         } else {
             $arr["error"] = $registerResult;
             return $this->view->render($response, 'signin-error.html.twig', $arr);
@@ -42,7 +42,7 @@ $app->post('/signin', function(Request $request, Response $response){
         $loginResult = $db->findUser();
 
         if ($loginResult === true){
-            return $this->view->render($response->withRedirect('about'), 'about-loggedin.twig');
+            return $this->view->render($response->withRedirect('homepage'), 'homepage-loggedin.html.twig');
         } else {
             $arr["error"] = $loginResult;
             return $this->view->render($response, 'signin-error.html.twig', $arr);

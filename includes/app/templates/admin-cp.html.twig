@@ -30,6 +30,32 @@
             <div id="heading1-admin">{{ firstName }}'s ADMIN Control Panel</div>
 
             <div id="option1">
+                <span id="option-title">Add Recipe</span>
+                <p>Add a recipe to the database.</p>
+                <form method="post">
+                    <label for="title">Recipe Title:</label>
+                    <input type="text" name="title"><br><br>
+                    <label for="prepTime">Prep Time:</label>
+                    <input type="text" name="prepTime"><br><br>
+                    <label for="cookTime">Cook Time:</label>
+                    <input type="text" name="cookTime"><br><br>
+                    <label for="servings">Servings:</label>
+                    <input type="text" name="servings"><br><br>
+                    <label for="source">Source:</label>
+                    <input type="text" name="source"><br><br>
+                    <label for="url">Recipe URL:</label>
+                    <input type="text" name="url"><br><br>
+                    <label for="thumbnail">Thumbnail URL:</label>
+                    <input type="text" name="thumbnail"><br><br>
+
+                    <label for="ingredients">Ingredients:</label>
+                    <input id="ingredients" type="text" name="ingredients" placeholder="Enter something">
+
+                    <button name="recipeSubmit">Submit</button>
+                </form>
+            </div>
+
+            <div id="option2">
                 <span id="option-title">Make Admin</span>
                 <p>Give a user administrative privileges.</p>
                 <form method="post">
@@ -39,7 +65,7 @@
                 </form>
             </div>
 
-            <div id="option2">
+            <div id="option1">
                 <span id="option-title">Remove Admin</span>
                 <p>Remove a user's administrative privileges.</p>
                 <form method="post">
@@ -53,5 +79,19 @@
         </div>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var firstElement = document.getElementById('ingredients');
+
+            var choices1 = new Choices(firstElement, {
+                delimiter: ',',
+                editItems: true,
+                removeItemButton: true,
+                duplicateItemsAllowed: false,
+                allowPaste: false
+            })
+        });
+    </script>
 
 {% endblock %}

@@ -411,8 +411,7 @@ object{
 #user-cp button {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    display: block;
+    width: 100%;
 }
 
 #heading1, #heading1-admin {

@@ -289,7 +289,6 @@ class UserDatabaseWrapper
     }
 
 
-
     public function changeFirstName()
     {
         $newFirstName = trim($_POST['newFirstName']);
@@ -381,5 +380,85 @@ class UserDatabaseWrapper
                 return "User does not exist";
             }
         }
+    }
+
+    public function recipeSubmit(){
+        $title = trim($_POST['title']);
+        $prepTime = trim($_POST['prepTime']);
+        $cookTime = trim($_POST['cookTime']);
+
+        $servings = trim($_POST['servings']);
+        $source = trim($_POST['source']);
+        $url = trim($_POST['url']);
+        $thumbnail = trim($_POST['thumbnail']);
+
+        $tags = $_POST['ingredients'];
+        $ingredients = explode (",", $tags);
+
+        if (isset($title) === true && $title === '') {
+            return "Please enter a title";
+        }
+
+        if (isset($prepTime) === true && $prepTime === '') {
+            return "Please enter a prep time";
+        }
+
+        if (isset($cookTime) === true && $cookTime === '') {
+            return "Please enter a cook time";
+        }
+
+        if (isset($servings) === true && $servings === '') {
+            return "Please enter servings";
+        }
+
+        if (isset($source) === true && $source === '') {
+            return "Please enter a source";
+        }
+
+        if (isset($url) === true && $url === '') {
+            return "Please enter a URL";
+        }
+
+        if (isset($thumbnail) === true && $thumbnail === '') {
+            return "Please enter a thumbnail";
+        }
+
+        if (isset($tags) === true && $tags === '') {
+            return "Please enter ingredients";
+        }
+
+
+
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+        $insertStatement = "INSERT into `recipes` (recipeTitle, recipePrepTime, recipeCookTime, recipeServings, recipeSource, recipeURL, recipeImageURL) VALUES (:title, :prepTime, :cookTime, :servings, :source, :url, :thumbnail)";
+
+        $sql = $this->database->prepare($insertStatement);
+
+        $sql->bindParam(':title', $title);
+        $sql->bindParam(':prepTime', $prepTime);
+        $sql->bindParam(':cookTime', $cookTime);
+        $sql->bindParam(':servings', $servings);
+        $sql->bindParam(':source', $source);
+        $sql->bindParam(':url', $url);
+        $sql->bindParam(':thumbnail', $thumbnail);
+
+        $sql->execute();
+
+        $rowID = $this->database->lastInsertId();
+
+        foreach ($ingredients as $ingredient) {
+            $insertStatement = "INSERT into `ingredients` (recipeID, ingredient) VALUES (:recipeID, :ingredient)";
+            $sql = $this->database->prepare($insertStatement);
+
+            $sql->bindParam(':recipeID', $rowID);
+            $sql->bindParam(':ingredient', $ingredient);
+
+            $sql->execute();
+        }
+
+        return TRUE;
     }
 }

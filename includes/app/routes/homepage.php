@@ -11,8 +11,12 @@ use App\controllers\RecipeDatabaseWrapper;
 $app->get('/', function(Request $request, Response $response)
 {
     $db = new RecipeDatabaseWrapper();
+
     $featuredResult = $db->getFeatured();
     $arr["featured"] = $featuredResult;
+
+    $randomResult = $db->getRandomRecipes();
+    $arr["random"] = $randomResult;
 
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
@@ -36,7 +40,6 @@ $app->get('/homepage', function(Request $request, Response $response)
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         return $this->view->render($response, 'homepage-loggedin.html.twig', $arr);
-
     } else {
         session_destroy();
         return $this->view->render($response, 'homepage-loggedout.html.twig', $arr);

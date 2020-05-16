@@ -12,13 +12,3 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
     return $view;
 };
-
-
-$container['statusController'] = function ($container) {
-    return new \App\Controllers\StatusController();
-};
-
-$container['databaseWrapper'] = function ($container) {
-    $databaseWrapper = new \App\Controllers\DatabaseWrapper();
-    return $databaseWrapper;
-};

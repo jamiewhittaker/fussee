@@ -21,10 +21,6 @@ session_start();
 
 $app = new \Slim\App($container);
 
-// create a monolog channel
-
-$log = new Logger('logger');
-$log->pushHandler(new StreamHandler(dirname(__FILE__) . '/log.txt', Logger::WARNING));
 
 require $app_dir . 'routes.php';
 

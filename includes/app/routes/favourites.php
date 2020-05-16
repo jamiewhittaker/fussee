@@ -18,6 +18,12 @@ $app->get('/favourites', function(Request $request, Response $response)
             if (is_numeric($start)) {
                 if ( ( ($start % 20) == 0) AND ($start >= 0) ){
                     $count = $db->getFavouritesCount();
+
+                    if ($count <= 0) {
+                        $arr["firstName"] = $_SESSION['firstName'];
+                        return $this->view->render($response, 'favourites-empty.html.twig', $arr);
+                    }
+
                     if ($start >= $count) {
                         $arr['error'] = "Start offset greater than number of results";
                         $arr["firstName"] = $_SESSION['firstName'];
@@ -37,6 +43,11 @@ $app->get('/favourites', function(Request $request, Response $response)
         }
 
         $count = $db->getFavouritesCount();
+
+        if ($count <= 0) {
+            $arr["firstName"] = $_SESSION['firstName'];
+            return $this->view->render($response, 'favourites-empty.html.twig', $arr);
+        }
 
         $arr["favouritesResult"] = $favouritesResult;
         $arr["start"] = $start;
@@ -65,46 +76,58 @@ $app->get('/favourites', function(Request $request, Response $response)
 })->setName('/favourites' );
 
 $app->post('/addfavourite', function(Request $request, Response $response) {
-    $userID = $_SESSION['userID'];
-    $recipeID = $_POST['recipeID'];
 
-    if ((isset($_SESSION['userID'])) === FALSE){
-        return;
+    if ($_SESSION["loggedIn"] === TRUE) {
+        $userID = $_SESSION['userID'];
+        $recipeID = $_POST['recipeID'];
+
+        if ((isset($_SESSION['userID'])) === FALSE){
+            return;
+        }
+
+        if((is_numeric($userID)) === FALSE) {
+            return;
+        }
+
+        if((is_numeric($recipeID)) === FALSE) {
+            return;
+        }
+
+        $db = new RecipeDatabaseWrapper();
+
+        if ($db->recipeExists($recipeID)) {
+            $db->addFavourite($userID, $recipeID);
+        }
+
     }
 
-    if((is_numeric($userID)) === FALSE) {
-        return;
-    }
-
-    if((is_numeric($recipeID)) === FALSE) {
-        return;
-    }
-
-    $db = new RecipeDatabaseWrapper();
-
-    $db->addFavourite($userID, $recipeID);
 
 });
 
 $app->post('/removefavourite', function(Request $request, Response $response) {
-    $userID = $_SESSION['userID'];
-    $recipeID = $_POST['recipeID'];
+    if ($_SESSION["loggedIn"] === TRUE){
 
-    if ((isset($_SESSION['userID'])) === FALSE){
-        return;
+        $userID = $_SESSION['userID'];
+        $recipeID = $_POST['recipeID'];
+
+        if ((isset($_SESSION['userID'])) === FALSE){
+            return;
+        }
+
+        if((is_numeric($userID)) === FALSE) {
+            return;
+        }
+
+        if((is_numeric($recipeID)) === FALSE) {
+            return;
+        }
+
+        $db = new RecipeDatabaseWrapper();
+
+        $db->removeFavourite($userID, $recipeID);
+
     }
 
-    if((is_numeric($userID)) === FALSE) {
-        return;
-    }
-
-    if((is_numeric($recipeID)) === FALSE) {
-        return;
-    }
-
-    $db = new RecipeDatabaseWrapper();
-
-    $db->removeFavourite($userID, $recipeID);
 
 });
 

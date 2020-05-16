@@ -38,6 +38,26 @@ class RecipeDatabaseWrapper
         return $count;
     }
 
+    public function recipeExists($id) {
+        $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
+        $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $findStatement = "SELECT COUNT(*) FROM `recipes` WHERE `recipeID` = :recipeID";
+        $sql = $this->database->prepare($findStatement);
+        $sql->bindParam('recipeID', $id);
+        $sql->execute();
+
+        $count = $sql->fetchColumn();
+
+        if ($count > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+
+
     public function getFeatured(){
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -7,7 +7,6 @@
 namespace App\controllers;
 
 use PDO;
-use App\models\User;
 
 
 class UserDatabaseWrapper
@@ -20,16 +19,20 @@ class UserDatabaseWrapper
         $password = trim($_POST['registerPassword']);
         $email = trim($_POST['registerEmail']);
 
-        if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
+        if (preg_match('/[\'^!£$%&*()}{#~?><>,|=_+¬-]/ ', $email)) {
             return "Account information cannot contain special characters";
         }
 
-        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
+        if (preg_match('/[\'^!£$%&*()}{@#~?><>,|=_+¬-]/ ', $password)) {
             return "Account information cannot contain special characters";
         }
 
-        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $firstName)) {
+        if (preg_match('/[\'^!£$%&*()}{@#~?><>,|=_+¬-]/ ', $firstName)) {
             return "Account information cannot contain special characters";
+        }
+
+        if ((ctype_alpha($firstName) === FALSE)) {
+            return "First name should only contain alphabetic characters";
         }
 
         if (isset($email) === true && $email === '') {
@@ -288,13 +291,16 @@ class UserDatabaseWrapper
         }
     }
 
-
     public function changeFirstName()
     {
         $newFirstName = trim($_POST['newFirstName']);
 
         if (preg_match('/[\'^£$%&*()}{#~?><>,|=_+¬-]/ ', $newFirstName)) {
             return "Account information cannot contain special characters";
+        }
+
+        if ((ctype_alpha($newFirstName) === FALSE)) {
+            return "First name should only contain alphabetic characters";
         }
 
         if (isset($newFirstName) === true && $newFirstName === '') {
@@ -316,7 +322,6 @@ class UserDatabaseWrapper
         $_SESSION['firstName'] = $newFirstName;
         return TRUE;
     }
-
 
     public function makeAdmin(){
         $email = trim($_POST['email']);

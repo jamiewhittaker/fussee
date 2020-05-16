@@ -68,6 +68,34 @@ $app->post('/search', function(Request $request, Response $response) {
         }
     }
 
+    foreach ($yesTagsArray as $tag){
+        if ($tag !== "") {
+            if ((ctype_alpha($tag) === FALSE)) {
+                $arr["error"] = "Tags can only contain alphabetic characters";
+                if (isset($_SESSION['loggedIn'])){
+                    $arr["firstName"] = $_SESSION['firstName'];
+                    return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                } else {
+                    return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                }
+            }
+        }
+    }
+
+    foreach ($noTagsArray as $tag){
+        if ($tag !== "") {
+            if ((ctype_alpha($tag) === FALSE)) {
+                $arr["error"] = "Tags can only contain alphabetic characters";
+                if (isset($_SESSION['loggedIn'])){
+                    $arr["firstName"] = $_SESSION['firstName'];
+                    return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                } else {
+                    return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                }
+            }
+        }
+    }
+
     if ($noTags === "") {
         if (count($yesTagsArray) === 1){
             $searchResult = $db->searchRecipesOneTag($yesTagsArray[0]);

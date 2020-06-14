@@ -11,34 +11,39 @@ $app->get('/favourites', function(Request $request, Response $response)
         $start = $request->getQueryParam('start');
         $db = new RecipeDatabaseWrapper();
 
+        $count = $db->getFavouritesCount();
+        $arr["loggedIn"] = true;
+
+
+        if ($count <= 0) {
+            $arr["firstName"] = $_SESSION['firstName'];
+            $arr["error"] = "The favourites list is empty.";
+            return $this->view->render($response, 'favourites.html.twig', $arr);
+        }
+
         if ($start === null){
             $favouritesResult = $db->getFavourites(0);
             $arr["previousPage"] = "favourites?start=0";
         } else {
             if (is_numeric($start)) {
                 if ( ( ($start % 20) == 0) AND ($start >= 0) ){
-                    $count = $db->getFavouritesCount();
 
-                    if ($count <= 0) {
-                        $arr["firstName"] = $_SESSION['firstName'];
-                        return $this->view->render($response, 'favourites-empty.html.twig', $arr);
-                    }
 
                     if ($start >= $count) {
                         $arr['error'] = "Start offset greater than number of results";
                         $arr["firstName"] = $_SESSION['firstName'];
-                        return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                        return $this->view->render($response, 'favourites.html.twig', $arr);
                     }
                     $favouritesResult = $db->getFavourites($start);
                 } else {
                     $arr['error'] = "Start number is invalid";
                     $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                    return $this->view->render($response, 'favourites.html.twig', $arr);
                 }
             } else {
                 $arr['error'] = "Start parameter is invalid";
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'favourites-error-loggedin.html.twig', $arr);
+                return $this->view->render($response, 'favourites.html.twig', $arr);
             }
         }
 
@@ -46,7 +51,7 @@ $app->get('/favourites', function(Request $request, Response $response)
 
         if ($count <= 0) {
             $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'favourites-empty.html.twig', $arr);
+            return $this->view->render($response, 'favourites.html.twig', $arr);
         }
 
         $arr["favouritesResult"] = $favouritesResult;
@@ -67,11 +72,11 @@ $app->get('/favourites', function(Request $request, Response $response)
         }
 
         $arr["firstName"] = $_SESSION["firstName"];
-        return $this->view->render($response, 'favourites-loggedin.html.twig', $arr);
+        return $this->view->render($response, 'favourites.html.twig', $arr);
 
     } else {
         session_destroy();
-        return $this->view->render($response, 'favourites-loggedout.html.twig');
+        return $this->view->render($response, 'favourites.html.twig');
     }
 })->setName('/favourites' );
 

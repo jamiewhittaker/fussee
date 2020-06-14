@@ -1,0 +1,100 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee - Favourites{% endblock %}
+{% block content %}
+
+    {% if loggedIn %}
+
+    {% if error is defined %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> {{ error }}
+        </div>
+    {% else %}
+
+    <div class="favourites-wrapper">
+        <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1">{{ firstName }}'s Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h4>
+            <small>Returned {{ count }} recipes</small>
+        </div>
+    </div>
+
+
+            {% if ( (start + 20 >= count) and (start <= 0) ) %}
+
+            {% elseif (start + 20) > count %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                </div>
+            {% elseif (start <= 0) %}
+                <div id="pagebuttons-top">
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% else %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% endif %}
+
+
+    <div class="list-group frontpage">
+        {% for recipe in favouritesResult %}
+            <li class="list-group-item list-group-item-action align-items-start">
+                <div class="d-flex">
+                    <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                    <div class="d-flex w-100 justify-content-between">
+                        <div>
+                            <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
+                            <small>{{ recipe.recipeSource }}</small>
+                        </div>
+
+                        <div class="favourite" data-id="{{ recipe.recipeID }}">
+                            <i class="fas fa-heart"></i>
+                            <div class="favourite-text">Remove from favourites</div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr/>
+                <div class="recipe-badges">
+                    <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
+                    <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
+                    <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
+                </div>
+            </li>
+        {% endfor %}
+    </div>
+
+
+
+            {% if ( (start + 20 >= count) and (start <= 0) ) %}
+
+            {% elseif (start + 20) > count %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                </div>
+            {% elseif (start <= 0) %}
+                <div id="pagebuttons-top">
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% else %}
+                <div id="pagebuttons-top">
+                    <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                    <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+                </div>
+            {% endif %}
+
+        </div>
+
+    <script src="remove-favourite.js"></script>
+
+    {% endif %}
+
+{% else %}
+
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> You can't access this page if you're not logged in.
+    </div>
+
+    {% endif %}
+
+{% endblock %}

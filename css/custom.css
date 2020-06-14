@@ -82,9 +82,6 @@ object{
 
 .recipe-badges {
     width: 100%;
-    background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    border-radius: 25px;
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
@@ -109,3 +106,65 @@ object{
     margin-top: 10px;
 }
 
+.favourites-wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    vertical-align: bottom;
+}
+
+.favourites-wrapper small {
+    margin-top: 5px;
+}
+
+
+#pagebuttons-top, #pagebuttons-bottom{
+    background-color: #e9ecef;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+#pagebuttons-bottom {
+    margin-top: 10px;
+}
+
+#pagebuttons-top span, #pagebuttons-bottom span {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#pagebuttons-top span:hover, #pagebuttons-bottom span:hover {
+    color: #3d3d3d;
+}
+
+#pagebuttons-top a, #pagebuttons-bottom a {
+    color: black;
+}
+
+#previous-page{
+    float: left;
+}
+
+#next-page{
+    float: right;
+}
+
+.about-cards{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.homepage-wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.logo{
+    font-family: 'Patua One', cursive;
+    margin-right: 20px;
+}

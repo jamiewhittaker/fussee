@@ -46,7 +46,7 @@ object{
     color: #00aa55;
     cursor: pointer;
     width: 100px;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 
@@ -69,5 +69,23 @@ object{
     margin-bottom: 10px;
     font-size: 32px;
     font-weight: bold;
+}
 
+.dropdown-menu i {
+    margin-right: 10px;
+}
+
+
+.frontpage {
+    margin-bottom: 30px;
+}
+
+.recipe-badges {
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 25px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

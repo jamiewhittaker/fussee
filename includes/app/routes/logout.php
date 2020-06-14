@@ -14,5 +14,5 @@ use App\controllers\UserDatabaseWrapper;
 $app->get('/logout', function(Request $request, Response $response)
 {
     session_destroy();
-    return $this->view->render($response->withRedirect('homepage'), 'homepage-loggedout.html.twig');
+    return $this->view->render($response->withRedirect('homepage'), 'homepage.html.twig');
 })->setName('/logout' );

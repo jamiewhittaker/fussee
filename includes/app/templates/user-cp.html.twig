@@ -2,35 +2,50 @@
 {% block title %}Fussee - User Control Panel{% endblock %}
 {% block content %}
 
-
-
     {% if loggedIn %}
-
-
         <div class="container-fluid">
             <div class="row">
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar cp-sidebar">
                     <div class="sidebar-sticky">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Account details</span>
+                        </h6>
+
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" onclick="javascript:openSetting('cp-email-change');">
-                                    <span data-feather="change-email"></span>
+                                <a class="nav-link" href="#" onclick="javascript:openSetting('cp-email-change');">
                                     Change Email
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="javascript:openSetting('cp-password-change');">
-                                    <span data-feather="change-password"></span>
                                     Change Password
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="javascript:openSetting('cp-firstName-change');">
-                                    <span data-feather="change-firstName"></span>
                                     Change First Name
                                 </a>
                             </li>
                         </ul>
+
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Other options</span>
+                        </h6>
+
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-favourites');">
+                                    Remove favourites
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-delete-account');">
+                                    Delete account
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
                 </nav>
 
@@ -47,6 +62,17 @@
                             <strong>Success!</strong> {{ success }}
                         </div>
                     {% endif %}
+
+
+                    <div class="cp-intro">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Welcome to your control panel, {{ firstName }}.</h1>
+                        </div>
+
+                        <p>Choose an option in the sidebar to proceed.</p>
+                    </div>
+
+
 
                     <div class="cp-option cp-email-change">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -121,12 +147,12 @@
             $('.cp-option').hide();
 
             function openSetting(p1) {
+                $('.cp-intro').hide();
                 $('.cp-option').hide();
                 $('.'+p1).show();
             }
 
         </script>
-
 
 
     {% else %}

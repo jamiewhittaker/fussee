@@ -1,9 +1,3 @@
-object{
-    display: block;
-    margin: auto;
-}
-
-
 .btn-group object {
     margin-right: 5px;
     width: 19px;
@@ -167,4 +161,17 @@ object{
 .logo{
     font-family: 'Patua One', cursive;
     margin-right: 20px;
+}
+
+#loginImage object{
+    display: block;
+    margin: auto;
+}
+
+footer {
+    background-color: #e9ecef;
+    text-align: center;
+    font-size: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

@@ -7,6 +7,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 $app->get('/about', function(Request $request, Response $response)
 {
+    $arr = [];
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         $arr["loggedIn"] = true;

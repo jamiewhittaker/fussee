@@ -56,9 +56,15 @@
             {% if not loggedIn %}
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
+
+                    {% if block("title") == "Fussee - Sign In" %}
+                    <li class="nav-item active">
+                    {% else %}
                     <li class="nav-item">
+                    {% endif %}
                         <a class="nav-link" href="signin">Login / Register</a>
                     </li>
+
                 </ul>
             </div>
             {% endif %}

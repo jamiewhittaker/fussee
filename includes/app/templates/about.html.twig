@@ -1,69 +1,73 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Fussee - About{% endblock %}
 {% block content %}
-    <div id="wrapper">
 
-        <div class="topnav">
-            <div class="logo">fussee</div>
-            <div class="topnav-right">
-                <a href="homepage">Home</a>
-                <a class="active" href="about">About</a>
-                <a href="browse">Browse</a>
-                <div class="dropdown">
-                    <a href="user-cp">
-                        <div class="loggedInUser">
-                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
-                            {{ firstName }}
-                        </div>
-                    </a>
+    <div class="jumbotron">
+        <h1 class="display-3">What is Fussee?</h1>
+        <p class="lead">
+            Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
+            Simply search for ingredients that you would and would <b>NOT</b> like to eat
+            and Fussee will return recipes for you that match your search criteria.
+        </p>
+        <hr class="my-2">
+        <p></p>
+        <small>
+            Fussee was made by Jamie Whittaker in 2020 as part of the final year project for his Computer Science BSc and is hosted here solely
+            as a portfolio piece. Fussee is not currently intended for use and no legal liability is accepted.
+        </small>
+    </div>
 
-                    <div class="dropdown-content">
-                        <a href="favourites"><i class="fas fa-heart"></i> Favourites</a>
-                        <a href="user-cp"><i class="fas fa-cog"></i> Settings</a>
-                        <a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </div>
-                </div>
+    <div class="card-columns">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Technologies</h4>
+                <p class="card-text">
+                A list of the technologies used by the Fussee website can be found below:
+                <ul>
+                    <li>PHP</li>
+                    <li>SLIM micro-framework</li>
+                    <li>TWIG template engine</li>
+                    <li>MySQL database</li>
+                    <li>HTML5, CSS, JavaScript</li>
+                    <li>Choices.js library</li>
+                    <li>Bootstrap 4</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Source Code</h4>
+                <p class="card-text">
+                    Fussee is currently open source and its source code can be found <a href="https://github.com/jamiewhittaker/fussee">here</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Scraping</h4>
+                <p class="card-text">
+                    All recipes that are currently in the database were scraped from BBC Food for educational purposes using
+                    Python and the Beautiful Soup library.
+                </p>
             </div>
         </div>
 
 
-        <script>
-            let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
-
-            function getRandomImage() {
-                let folderPath = "assets/";
-                let num = Math.floor( Math.random() * images.length);
-                let image = images[num];
-                let imgStr = '<img src="' + folderPath + image + '" alt = "">';
-                document.write(imgStr);
-                document.close();
-            }
-        </script>
-
-        <div id="image"><script type="text/javascript">getRandomImage();</script></div>
-
-        <div id="summary">
-
-        <p>
-            Fussee is a website specifically tailored towards fussy eaters and people that suffer with food allergies and intolerence.
-            Simply search for the ingredients that you would like to cook and enter the ingredients that you would <b>NOT</b> like to eat
-            and Fussee will return recipes for you that match your search criteria.
-            <br><br>
-            The Fussee project was conceived by Jamie Whittaker in 2019 for his final year project at De Montfort University, Leicester.
-            It was completed in 2020.
-            Fussee is driven by the following technologies:
-
-            <ul>
-                <li>PHP</li>
-                <li>SLIM micro-framework</li>
-                <li>TWIG template engine</li>
-                <li>MySQL database</li>
-            </ul>
-            <br>
-            All images used are royalty free images from <a href="https://unsplash.com/">Unsplash</a>.
-        </p>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resources</h4>
+                <p class="card-text">
+                All images used are royalty free images from <a href="https://unsplash.com/">Unsplash</a>. <br><br>
+                All illustrations are 'open-source illustrations' from <a href="https://undraw.co/">unDraw</a>.
+                </ul>
+                </p>
+            </div>
+        </div>
 
     </div>
 
-    </div>
+
 {% endblock %}

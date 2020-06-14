@@ -15,10 +15,11 @@ $app->get('/signin', function(Request $request, Response $response)
 {
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
-        return $this->view->render($response, 'signin-loggedin.html.twig', $arr);
+        $arr["loggedIn"] = true;
+        return $this->view->render($response, 'signin.html.twig', $arr);
     } else {
         session_destroy();
-        return $this->view->render($response, 'signin-loggedout.html.twig');
+        return $this->view->render($response, 'signin.html.twig');
     }
 })->setName('/signin' );
 
@@ -34,7 +35,7 @@ $app->post('/signin', function(Request $request, Response $response){
            return $this->view->render($response->withRedirect('homepage'), 'homepage.html.twig');
         } else {
             $arr["error"] = $registerResult;
-            return $this->view->render($response, 'signin-error.html.twig', $arr);
+            return $this->view->render($response, 'signin.html.twig', $arr);
         }
     }
 
@@ -45,7 +46,7 @@ $app->post('/signin', function(Request $request, Response $response){
             return $this->view->render($response->withRedirect('homepage'), 'homepage.html.twig');
         } else {
             $arr["error"] = $loginResult;
-            return $this->view->render($response, 'signin-error.html.twig', $arr);
+            return $this->view->render($response, 'signin.html.twig', $arr);
         }
     }
 

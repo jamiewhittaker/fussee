@@ -18,10 +18,10 @@ var myFunction = function() {
         }
     });
 
-    this.innerHTML = "<i class=\"fas fa-heart\"></i>";
+    this.innerHTML = "<i class=\"fas fa-heart\"></i><div class=\"favourite-text\">Added to favourites</div>";
     this.className = "favourite-clicked";
-
 };
+
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', myFunction, false);

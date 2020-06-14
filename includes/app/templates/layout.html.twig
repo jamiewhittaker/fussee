@@ -3,15 +3,87 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="Author" content="Jamie Whittaker"/>
-    <link rel="stylesheet" href="css/main.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/choices.css">
-    <script src="jquery-3.5.0.min.js"></script>
     <script src="choices.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ff5142cf5f.js" crossorigin="anonymous"></script>
+
+    <script src="jquery-3.5.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="homepage">Fussee</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% if block("title") == "Fussee" %}
+                <li class="nav-item active">
+            {% else %}
+                <li class="nav-item">
+            {% endif %}
+                    <a class="nav-link" href="homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+            {% if block("title") == "Fussee - About" %}
+            <li class="nav-item active">
+            {% else %}
+            <li class="nav-item">
+            {% endif %}
+                <a class="nav-link" href="about">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="browse">Browse</a>
+            </li>
+        </ul>
+
+            {% if not loggedIn %}
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin">Login / Register</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            {% endif %}
+
+
+        {% if loggedIn %}
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <object type="image/svg+xml" data="assets/avatar.svg"></object>
+                {{ firstName }}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button"><i class="fas fa-heart"></i> Favourites</button>
+                <button class="dropdown-item" type="button"><i class="fas fa-cog"></i> Settings</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button"><a href="logout"><i class="fas fa-sign-out-alt"></i>Logout</a></button>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</nav>
+
 {% block content %}{% endblock %}
 
 </body>

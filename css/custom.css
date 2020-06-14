@@ -1,0 +1,73 @@
+object{
+    display: block;
+    margin: auto;
+}
+
+
+.btn-group object {
+    margin-right: 5px;
+    width: 19px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.dropdown-item i {
+    margin-right: 5px;
+    margin-left: -5px;
+}
+
+.dropdown-item .fas {
+    color: #00aa55;
+}
+
+.prep-badge {
+    background-color: red;
+}
+
+.cook-badge {
+    background-color: orange;
+}
+
+.serves-badge {
+    background-color: #00aa55;
+}
+
+.img-thumbnail {
+    max-width: 200px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.favourite, .favourite-clicked {
+    order: 2;
+    font-size: 32px;
+    text-align: center;
+    width: 45px;
+    color: #00aa55;
+    cursor: pointer;
+    width: 100px;
+    margin-top: 40px;
+}
+
+
+.favourite i, .favourite-clicked i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+
+.favourite-text {
+    font-size: 10px;
+    color: black;
+    text-align: center;
+}
+
+
+.section-title{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: bold;
+
+}

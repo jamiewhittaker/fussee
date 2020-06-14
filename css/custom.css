@@ -101,3 +101,12 @@ object{
     margin-bottom: 50px;
 }
 
+.cp-sidebar {
+    min-height: 100vh;
+    padding-top: 10px;
+}
+
+.alert-margin {
+    margin-top: 10px;
+}
+

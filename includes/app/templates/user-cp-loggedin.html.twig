@@ -1,71 +1,138 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Fussee - User Control Panel{% endblock %}
 {% block content %}
-        <div id="wrapper">
 
-        <div class="topnav">
-            <div class="logo">fussee</div>
-            <div class="topnav-right">
-                <a href="homepage">Home</a>
-                <a href="about">About</a>
-                <a href="browse">Browse</a>
-                <div class="dropdown">
-                    <a class="active" href="user-cp">
-                        <div class="loggedInUser">
-                            <object type="image/svg+xml" data="assets/avatar.svg"></object>
-                            {{ firstName }}
-                        </div>
-                    </a>
 
-                    <div class="dropdown-content">
-                        <a href="favourites"><i class="fas fa-heart"></i> Favourites</a>
-                        <a href="user-cp"><i class="fas fa-cog"></i> Settings</a>
-                        <a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+    {% if loggedIn %}
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar cp-sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" onclick="javascript:openSetting('cp-email-change');">
+                                    <span data-feather="change-email"></span>
+                                    Change Email
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="javascript:openSetting('cp-password-change');">
+                                    <span data-feather="change-password"></span>
+                                    Change Password
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="javascript:openSetting('cp-firstName-change');">
+                                    <span data-feather="change-firstName"></span>
+                                    Change First Name
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+                    {% if error is defined %}
+                        <div class="alert alert-danger alert-margin" role="alert">
+                            <strong>Oh snap!</strong> {{ error }}
+                        </div>
+                    {% endif %}
+
+                    {% if success is defined %}
+                        <div class="alert alert-success alert-margin" role="alert">
+                            <strong>Success!</strong> {{ success }}
+                        </div>
+                    {% endif %}
+
+                    <div class="cp-option cp-email-change">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Change Email Address</h1>
+                        </div>
+
+                        <p>Change your email address using the form below.</p>
+
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="newEmail">New email address:</label>
+                                <input type="email" class="form-control" name="newEmail" placeholder="Enter your new email address here...">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter your password here...">
+                            </div>
+
+                            <button name="changeEmailSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                        </form>
+
+                    </div>
+
+
+                    <div class="cp-option cp-password-change">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Change Password</h1>
+                        </div>
+
+                        <p>Change your password using the form below.</p>
+
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="oldPassword">Current password:</label>
+                                <input type="password" class="form-control" name="oldPassword" placeholder="Enter your current password here...">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New password:</label>
+                                <input type="password" class="form-control" name="newPassword" placeholder="Enter your new password here...">
+                            </div>
+
+                            <button name="changePasswordSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+
+                        </form>
+                    </div>
+
+
+                    <div class="cp-option cp-firstName-change">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Change First Name</h1>
+                        </div>
+
+                        <p>Change your first name using the form below.</p>
+
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="newFirstName">New first name:</label>
+                                <input type="text" class="form-control" name="newFirstName" placeholder="Enter a new first name here...">
+                            </div>
+
+                            <button name="changeFirstNameSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+
+                        </form>
+                    </div>
+
+
+                </main>
             </div>
         </div>
 
-            <div id="user-cp">
+        <script>
+            $('.cp-option').hide();
 
-                <div id="heading1">{{ firstName }}'s User Control Panel</div>
+            function openSetting(p1) {
+                $('.cp-option').hide();
+                $('.'+p1).show();
+            }
 
-            <div id="option1">
-                <span id="option-title">Email Address Change</span>
-                <p>Change your email address using the form below.</p>
-                <form method="post">
-                    <label for="newEmail">New email address:</label>
-                    <input type="email" name="newEmail"><br><br>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password"><br><br>
-                    <button name="changeEmailSubmit">Submit</button>
-                </form>
-            </div>
+        </script>
 
-            <div id="option2">
-            <span id="option-title">Password Change</span>
-            <p>Change your password using the form below.</p>
-            <form method="post">
-                <label for="oldPassword">Current password:</label>
-                <input type="password" name="oldPassword"><br><br>
-                <label for="newPassword">New password:</label>
-                <input type="password" name="newPassword"><br><br>
-                <button name="changePasswordSubmit">Submit</button>
-            </form>
-            </div>
 
-            <div id="option1">
-            <span id="option-title">First Name Change</span>
-            <p>Change your first name that is displayed on the website using the form below.</p>
-            <form method="post">
-                <label for="newFirstName">New first name:</label>
-                <input type="text" name="newFirstName"><br><br>
-                <button name="changeFirstNameSubmit">Submit</button>
-            </form>
-            </div>
 
-        </div>
-
+    {% else %}
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> You aren't logged in. Please login to use this page.
     </div>
+    {% endif %}
 
 {% endblock %}

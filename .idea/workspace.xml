@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout-old.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/m2m-slim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fussee.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add-favourite.js" beforeDir="false" afterPath="$PROJECT_DIR$/add-favourite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/layout.html.twig" afterDir="false" />
     </list>
@@ -47,11 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/app/templates/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+            <state relative-caret-position="187">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -59,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/app/routes/homepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
+            <state relative-caret-position="534">
               <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
             </state>
           </provider>
@@ -79,15 +80,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="411">
               <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -153,8 +145,8 @@
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/includes/app/routes/homepage.php" />
-        <option value="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" />
         <option value="$PROJECT_DIR$/includes/app/templates/layout.html.twig" />
+        <option value="$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig" />
       </list>
     </option>
   </component>
@@ -315,12 +307,12 @@
       <workItem from="1588692515978" duration="3257000" />
       <workItem from="1589550097062" duration="8863000" />
       <workItem from="1589630755140" duration="5698000" />
-      <workItem from="1592125457308" duration="8327000" />
+      <workItem from="1592125457308" duration="8485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8327000" />
+    <option name="totallyTimeSpent" value="8485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -492,24 +484,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig">
+    <entry file="file://$PROJECT_DIR$/includes/app/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="187">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/app/routes/homepage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
+        <state relative-caret-position="534">
           <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/app/templates/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/includes/app/templates/homepage-loggedout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        <state relative-caret-position="339">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>

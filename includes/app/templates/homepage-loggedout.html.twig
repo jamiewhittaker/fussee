@@ -29,10 +29,12 @@
                         <small>{{ recipe.recipeSource }}</small>
                     </div>
 
+                    {% if loggedIn %}
                     <div class="favourite" data-id="{{ recipe.recipeID }}">
                         <i class="far fa-heart"></i>
                         <div class="favourite-text">Add to favourites</div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
 

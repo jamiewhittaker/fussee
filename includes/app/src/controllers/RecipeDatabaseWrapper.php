@@ -79,7 +79,7 @@ class RecipeDatabaseWrapper
         $this->database = new PDO('mysql:host=' . db_host . ';dbname=' . db_name, db_username, db_password);
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query = "SELECT * FROM recipes ORDER BY RAND() LIMIT 3";
+        $query = "SELECT * FROM recipes ORDER BY RAND() LIMIT 5";
         $sql = $this->database->prepare($query);
         $sql->execute();
 

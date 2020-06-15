@@ -61,8 +61,7 @@
 .section-title{
     margin-left: 20px;
     margin-bottom: 10px;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 24px;
 }
 
 .dropdown-menu i {
@@ -71,7 +70,7 @@
 
 
 .frontpage {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .recipe-badges {
@@ -151,6 +150,7 @@
 .about-cards{
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .homepage-wrapper{
@@ -174,4 +174,20 @@ footer {
     font-size: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+
+.homepage-card{
+    max-width: 300px;
+    margin: auto;
+}
+
+.homepage-cards {
+    margin-bottom: 20px;
+}
+
+.homepage-card-title {
+    min-height: 80px;
+    max-height: 80px;
+    font-size: 20px;
 }

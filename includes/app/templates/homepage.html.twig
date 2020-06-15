@@ -63,9 +63,9 @@
                                 <b>Prep Time:</b> {{ recipe.recipePrepTime }}<br>
                                 <b>Cook Time:</b> {{ recipe.recipeCookTime }}<br>
                                 <b>Servings:</b> {{ recipe.recipeServings }}
-                            </small>
+                            </small><br>
+                            <div class="float-right text-muted recipe-source">{{ recipe.recipeSource }}</div>
                         </p>
-                        <a href="{{ recipe.recipeURL }}" class="btn btn-primary">See more on {{ recipe.recipeSource }}</a>
                     </div>
                 </div>
             {% endfor %}

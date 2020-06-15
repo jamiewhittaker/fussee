@@ -26,9 +26,12 @@
             </div>
         </div>
 
-        <div id="browse-wrapper">
-
-            <div id="page-title">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} <span id="search-terms">Returned {{ count }} recipes</span></div>
+    <div class="favourites-wrapper">
+        <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h4>
+            <small>Returned {{ count }} recipes</small>
+        </div>
+    </div>
 
             <div id="pagebuttons-top">
                 {% if (start + 20) > count %}
@@ -41,31 +44,36 @@
                 {% endif %}
             </div>
 
+    <div class="homepage-wrapper">
+    {% for recipe in browseResult %}
+        <div class="list-group frontpage">
+            <li class="list-group-item list-group-item-action align-items-start">
+                <div class="d-flex">
+                    <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                    <div class="d-flex w-100 justify-content-between">
+                        <div>
+                            <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
+                            <small>{{ recipe.recipeSource }}</small>
+                        </div>
 
-        {% for recipe in browseResult %}
-            <div id="recipe">
-                <div class="recipe-left">
-                    <div id="recipeThumbnail">
-                        <a href="{{ recipe.recipeURL }}">
-                            <img src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}">
-                        </a>
-                    </div>
-
-                    <div id="recipeInfo">
-                        <div id="recipeTitle"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></div>
-                        <div id="recipeSource"><span id="sub-title">Source: </span>{{ recipe.recipeSource }}</div>
-                        <div id="recipePrepTime"><span id="sub-title">Prep Time: </span>{{ recipe.recipePrepTime }}</div>
-                        <div id="recipeCookTime"><span id="sub-title">Cook Time: </span>{{ recipe.recipeCookTime }}</div>
-                        <div id="recipeServings"><span id="sub-title">Serves: </span>{{ recipe.recipeServings }}</div>
+                        {% if loggedIn %}
+                            <div class="favourite" data-id="{{ recipe.recipeID }}">
+                                <i class="far fa-heart"></i>
+                                <div class="favourite-text">Add to favourites</div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
-
-                <div class="favourite" data-id="{{ recipe.recipeID }}">
-                    <i class="far fa-heart"></i>
-                    <div class="favourite-text">Add to favourites</div>
+                <hr/>
+                <div class="recipe-badges">
+                    <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
+                    <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
+                    <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
                 </div>
-            </div>
-        {% endfor %}
+            </li>
+        </div>
+    {% endfor %}
+    </div>
 
             <div id="pagebuttons-bottom">
                 {% if (start + 20) > count %}
@@ -80,6 +88,7 @@
 
         </div>
     </div>
+
 
     <script src="search-boxes.js"></script>
 

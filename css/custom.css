@@ -195,3 +195,62 @@ footer {
 body {
     margin-bottom: 70px;
 }
+
+.recipe-source {
+    font-size: 10px;
+}
+
+.searchbox {
+    margin-top: 25px;
+}
+
+.searchbox-inputs{
+    display: flex;
+    margin-bottom: 8px;
+}
+
+#search-left {
+    order: 1;
+    width: 50%;
+    padding-right: 5px;
+}
+
+#search-right {
+    order: 2;
+    width: 50%;
+    padding-left: 5px;
+}
+
+
+
+.searchArea {
+    background-color: #e9ecef;
+    padding-top: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+
+}
+
+.searchHeader {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -20px;
+    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+    animation: fadein 5s;
+    margin-top: 10px;
+}
+
+#search-info {
+    display: inline-block;
+    background-color: #6c757d;
+    padding: 5px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+#submit-button {
+    text-align: center;
+    margin-top: 5px;
+}

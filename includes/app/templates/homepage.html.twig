@@ -17,58 +17,58 @@
     </div>
 
     <div class="homepage-wrapper">
-    <div class="section-title">Today's featured recipes...</div>
+        <div class="section-title">Today's featured recipes...</div>
 
-    {% for recipe in featured %}
-        <div class="list-group frontpage">
-            <li class="list-group-item list-group-item-action align-items-start">
-                <div class="d-flex">
-                    <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
-                    <div class="d-flex w-100 justify-content-between">
-                        <div>
-                            <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
-                            <small>{{ recipe.recipeSource }}</small>
-                        </div>
-
-                        {% if loggedIn %}
-                            <div class="favourite" data-id="{{ recipe.recipeID }}">
-                                <i class="far fa-heart"></i>
-                                <div class="favourite-text">Add to favourites</div>
+        {% for recipe in featured %}
+            <div class="list-group frontpage">
+                <li class="list-group-item list-group-item-action align-items-start">
+                    <div class="d-flex">
+                        <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                        <div class="d-flex w-100 justify-content-between">
+                            <div>
+                                <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
+                                <small>{{ recipe.recipeSource }}</small>
                             </div>
-                        {% endif %}
+
+                            {% if loggedIn %}
+                                <div class="favourite" data-id="{{ recipe.recipeID }}">
+                                    <i class="far fa-heart"></i>
+                                    <div class="favourite-text">Add to favourites</div>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="recipe-badges">
-                    <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
-                    <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
-                    <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
-                </div>
-            </li>
-        </div>
-    {% endfor %}
+                    <hr/>
+                    <div class="recipe-badges">
+                        <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
+                        <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
+                        <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
+                    </div>
+                </li>
+            </div>
+        {% endfor %}
 
 
 
         <div class="section-title">Five random recipes for you to enjoy...</div>
 
         <div class="card-group homepage-cards">
-        {% for recipe in random %}
-        <div class="card homepage-card">
-            <a href="{{ recipe.recipeURL }}"><img class="card-img-top" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
-            <div class="card-body">
-                <a href="{{ recipe.recipeURL }}"><h4 class="card-title homepage-card-title">{{ recipe.recipeTitle }}</h4></a>
-                <p class="card-text">
-                    <small>
-                        <b>Prep Time:</b> {{ recipe.recipePrepTime }}<br>
-                        <b>Cook Time:</b> {{ recipe.recipeCookTime }}<br>
-                        <b>Servings:</b> {{ recipe.recipeServings }}
-                    </small>
-                </p>
-                <a href="{{ recipe.recipeURL }}" class="btn btn-primary">See more on {{ recipe.recipeSource }}</a>
-            </div>
-        </div>
-        {% endfor %}
+            {% for recipe in random %}
+                <div class="card homepage-card">
+                    <a href="{{ recipe.recipeURL }}"><img class="card-img-top" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                    <div class="card-body">
+                        <a href="{{ recipe.recipeURL }}"><h4 class="card-title homepage-card-title">{{ recipe.recipeTitle }}</h4></a>
+                        <p class="card-text">
+                            <small>
+                                <b>Prep Time:</b> {{ recipe.recipePrepTime }}<br>
+                                <b>Cook Time:</b> {{ recipe.recipeCookTime }}<br>
+                                <b>Servings:</b> {{ recipe.recipeServings }}
+                            </small>
+                        </p>
+                        <a href="{{ recipe.recipeURL }}" class="btn btn-primary">See more on {{ recipe.recipeSource }}</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
 
 

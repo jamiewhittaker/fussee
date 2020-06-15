@@ -153,10 +153,6 @@
     margin-bottom: 20px;
 }
 
-.homepage-wrapper{
-    margin-left: 20px;
-    margin-right: 20px;
-}
 
 .logo{
     font-family: 'Patua One', cursive;
@@ -186,9 +182,12 @@ footer {
 }
 
 .homepage-card-title {
-    min-height: 80px;
-    max-height: 80px;
-    font-size: 20px;
+    overflow: hidden;
+    height: 50px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
 }
 
 body {
@@ -256,4 +255,16 @@ body {
 
 .featured-result {
     margin-bottom: 30px;
+}
+
+.homepage-columns {
+    max-width: 1500px;
+}
+
+.recipe-card-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
 }

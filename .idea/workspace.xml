@@ -4,11 +4,7 @@
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/routes/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-error-loggedin.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-error-loggedout.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/browse.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/browse-loggedout.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage.html.twig" afterDir="false" />
     </list>
@@ -63,11 +59,6 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/slim/twig-view" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="837" />
   </component>
   <component name="ProjectId" id="1W1XgslPdziqnAQTIvOuDyKAgHU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -154,7 +145,8 @@
       <workItem from="1592146667732" duration="3380000" />
       <workItem from="1592167679625" duration="139000" />
       <workItem from="1592168406186" duration="3228000" />
-      <workItem from="1592222281007" duration="2232000" />
+      <workItem from="1592222281007" duration="3046000" />
+      <workItem from="1592233925341" duration="2397000" />
     </task>
     <servers />
   </component>

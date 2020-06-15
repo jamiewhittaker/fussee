@@ -63,7 +63,7 @@ class RecipeDatabaseWrapper
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query = "WITH resultSet AS (
-            SELECT DISTINCT `recipeID` from `featured` ORDER BY timeAdded DESC LIMIT 5
+            SELECT DISTINCT `recipeID` from `featured` ORDER BY timeAdded DESC LIMIT 6
             )
             
             SELECT * FROM recipes, resultSet WHERE recipes.recipeID = resultSet.recipeID";

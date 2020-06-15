@@ -12,8 +12,8 @@
 
     <div class="favourites-wrapper">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ firstName }}'s Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h5>
-            <small>Returned {{ count }} recipes</small>
+            <h5 class="mb-1">Here are your favourite recipes, {{ firstName }}.</h5>
+            <small>Contains {{ count }} recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </small>
         </div>
     </div>
 
@@ -50,8 +50,8 @@
 
                                 {% if loggedIn %}
                                     <div class="favourite" data-id="{{ recipe.recipeID }}">
-                                        <i class="far fa-heart"></i>
-                                        <div class="favourite-text">Add to favourites</div>
+                                        <i class="fas fa-heart"></i>
+                                        <div class="favourite-text">Remove from favourites</div>
                                     </div>
                                 {% endif %}
                             </div>

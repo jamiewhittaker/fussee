@@ -16,7 +16,8 @@
     "ext-pdo": "*",
     "ext-soap": "*",
     "ext-xml": "*",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "erusev/parsedown": "^1.7"
   },
   "autoload": {
     "psr-4": {

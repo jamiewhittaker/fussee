@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee - Blog{% endblock %}
+{% block content %}
+
+    <div class="container blog-container">
+    <div class="card">
+        <div class="card-body blog-post">
+            <h4 class="card-title">Fussee Dev Blog - #1</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Jamie Whittaker - 15/06/2020</h6>
+            <div class="blog-post-body">{{ post|raw }}</div>
+            <div id="pagebuttons-top">
+                <a href="{{ previousPage }}"><span id="previous-page">< Previous Page</span></a>
+                <a href="{{ nextPage }}"><span id="next-page">Next Page ></span></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}

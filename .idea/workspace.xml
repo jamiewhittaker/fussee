@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f9ba1b-8224-47cf-844b-0c19eb44c3e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/app/routes/blog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/app/templates/blog.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/src/controllers/RecipeDatabaseWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/app/templates/favourites.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/favourites.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/dependencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/dependencies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/app/routes/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/routes/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/app/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/app/templates/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/includes/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/includes/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/includes/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,19 +90,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/includes/app/templates" />
-      <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
-      <recent name="D:\xampp\htdocs\fussee\includes\app\routes" />
-      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
-      <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="D:\xampp\htdocs\fussee\assets" />
       <recent name="D:\xampp\htdocs\fussee\assets\icons" />
       <recent name="D:\xampp\htdocs\fussee\css" />
       <recent name="D:\xampp\htdocs\fussee" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\fussee\includes\app\templates" />
+      <recent name="$PROJECT_DIR$/includes/app/templates" />
+      <recent name="D:\xampp\htdocs\fussee\includes\app\routes" />
+      <recent name="D:\xampp\htdocs\fussee\includes\app\src\controllers" />
+      <recent name="D:\Xampp\htdocs\m2m-slim\app\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,7 +155,8 @@
       <workItem from="1592167679625" duration="139000" />
       <workItem from="1592168406186" duration="3228000" />
       <workItem from="1592222281007" duration="3046000" />
-      <workItem from="1592233925341" duration="2397000" />
+      <workItem from="1592233925341" duration="4578000" />
+      <workItem from="1592249503469" duration="2784000" />
     </task>
     <servers />
   </component>

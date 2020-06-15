@@ -15,11 +15,11 @@
 }
 
 .prep-badge {
-    background-color: red;
+    background-color: #dc3545;
 }
 
 .cook-badge {
-    background-color: orange;
+    background-color: #fd7e14;
 }
 
 .serves-badge {
@@ -60,7 +60,7 @@
 
 .section-title{
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 24px;
 }
 
@@ -116,8 +116,6 @@
     background-color: #e9ecef;
     height: 30px;
     margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
     padding-top: 5px;
     font-size: 12px;
 }
@@ -267,4 +265,26 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3; /* number of lines to show */
+}
+
+.homepage-subtitle {
+    font-size: 16px;
+}
+
+.section-title2 {
+    margin-left: 0px;
+}
+
+.blog-post-body{
+    margin-bottom: 30px;
+}
+
+.blog-post h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.blog-container {
+    margin-top: 20px;
 }

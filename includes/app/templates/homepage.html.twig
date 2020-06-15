@@ -17,8 +17,9 @@
     </div>
 
     <div class="homepage-wrapper">
-        <div class="section-title">Today's featured recipes...</div>
+        <div class="section-title">Current featured recipes...</div>
 
+        <div class="featured-result">
         {% for recipe in featured %}
             <div class="list-group frontpage">
                 <li class="list-group-item list-group-item-action align-items-start">
@@ -47,8 +48,9 @@
                 </li>
             </div>
         {% endfor %}
+        </div>
 
-
+        <hr />
 
         <div class="section-title">Five random recipes for you to enjoy...</div>
 

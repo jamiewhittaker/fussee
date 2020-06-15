@@ -60,7 +60,7 @@
 
 .section-title{
     margin-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 24px;
 }
 
@@ -178,7 +178,6 @@ footer {
 
 
 .homepage-card{
-    max-width: 300px;
     margin: auto;
 }
 
@@ -193,7 +192,7 @@ footer {
 }
 
 body {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .recipe-source {
@@ -243,7 +242,7 @@ body {
 
 #search-info {
     display: inline-block;
-    background-color: #6c757d;
+    background-color: #5a6268;
     padding: 5px 5px;
     font-size: 12px;
     font-weight: bold;
@@ -253,4 +252,8 @@ body {
 #submit-button {
     text-align: center;
     margin-top: 5px;
+}
+
+.featured-result {
+    margin-bottom: 30px;
 }

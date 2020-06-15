@@ -4,7 +4,7 @@
 
 
         <div class="searchArea">
-            <div class="searchHeader">What would you like to eat?</div>
+            <div class="searchHeader lead">What would you like to eat?</div>
 
             <div class="searchbox">
                 <form action="search" method="post" class="searchbox">
@@ -26,9 +26,15 @@
             </div>
         </div>
 
+    {% if error is defined %}
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> {{ error }}
+    </div>
+    {% else %}
+
     <div class="favourites-wrapper">
         <div class="d-flex w-100 justify-content-between">
-            <h4 class="mb-1">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h4>
+            <h5 class="mb-1">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h5>
             <small>Returned {{ count }} recipes</small>
         </div>
     </div>
@@ -88,6 +94,8 @@
 
         </div>
     </div>
+
+    {% endif %}
 
 
     <script src="search-boxes.js"></script>

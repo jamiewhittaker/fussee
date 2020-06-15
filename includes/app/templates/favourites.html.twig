@@ -12,7 +12,7 @@
 
     <div class="favourites-wrapper">
         <div class="d-flex w-100 justify-content-between">
-            <h4 class="mb-1">{{ firstName }}'s Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h4>
+            <h5 class="mb-1">{{ firstName }}'s Favourite Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h5>
             <small>Returned {{ count }} recipes</small>
         </div>
     </div>
@@ -36,33 +36,36 @@
             {% endif %}
 
 
-    <div class="list-group frontpage">
-        {% for recipe in favouritesResult %}
-            <li class="list-group-item list-group-item-action align-items-start">
-                <div class="d-flex">
-                    <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
-                    <div class="d-flex w-100 justify-content-between">
-                        <div>
-                            <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
-                            <small>{{ recipe.recipeSource }}</small>
-                        </div>
+        <div class="homepage-wrapper">
+            {% for recipe in favouritesResult %}
+                <div class="list-group frontpage">
+                    <li class="list-group-item list-group-item-action align-items-start">
+                        <div class="d-flex">
+                            <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                            <div class="d-flex w-100 justify-content-between">
+                                <div>
+                                    <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
+                                    <small>{{ recipe.recipeSource }}</small>
+                                </div>
 
-                        <div class="favourite" data-id="{{ recipe.recipeID }}">
-                            <i class="fas fa-heart"></i>
-                            <div class="favourite-text">Remove from favourites</div>
+                                {% if loggedIn %}
+                                    <div class="favourite" data-id="{{ recipe.recipeID }}">
+                                        <i class="far fa-heart"></i>
+                                        <div class="favourite-text">Add to favourites</div>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
-
-                    </div>
+                        <hr/>
+                        <div class="recipe-badges">
+                            <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
+                            <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
+                            <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
+                        </div>
+                    </li>
                 </div>
-                <hr/>
-                <div class="recipe-badges">
-                    <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
-                    <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
-                    <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
-                </div>
-            </li>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
 
 
 

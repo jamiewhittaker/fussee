@@ -288,3 +288,20 @@ body {
 .blog-container {
     margin-top: 20px;
 }
+
+.markdown-editor {
+    margin-top: 20px;
+}
+
+.post-submit {
+    margin-top: 20px;
+}
+
+.blog-author {
+    font-size: 12px;
+    text-align: right;
+}
+
+.blog-card {
+    margin-bottom: 5px;
+}

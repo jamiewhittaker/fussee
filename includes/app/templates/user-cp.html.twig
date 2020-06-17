@@ -35,7 +35,7 @@
 
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-favourites');">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-markdown');">
                                     Remove favourites
                                 </a>
                             </li>
@@ -136,6 +136,40 @@
                             <button name="changeFirstNameSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
 
                         </form>
+                    </div>
+
+                    <div class="cp-option cp-markdown">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2">Create blog post</h1>
+                        </div>
+
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+                        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="post-title">Post title:</label>
+                                <input type="text" class="form-control" name="post-title" placeholder="Enter a title here...">
+                                <div class="markdown-editor">
+                                <textarea name="post-content"></textarea>
+                                </div>
+
+
+                            <label for="post-title">Post thumbnail:</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post-thumbnail">
+                            <div class="post-submit">
+                            <button name="post-submit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                            </div>
+                            </div>
+
+                        </form>
+
+
+
+
+                    <script>
+                        var simplemde = new SimpleMDE();
+                    </script>
                     </div>
 
 

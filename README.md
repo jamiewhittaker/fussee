@@ -16,6 +16,7 @@ Fussee was originally created as my final year project for my Bachelor's Degree 
 * Remove hard-coded SQL queries and create a query builder class
 * Improved responsive design for mobile devices
 
+---
 
 ## Screenshots
 #### Homepage

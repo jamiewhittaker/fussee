@@ -8,6 +8,7 @@ Fussee was originally created as my final year project for my Bachelor's Degree 
 * PHP 7 (using [SLIM Framework](http://www.slimframework.com/) and [TWIG Template Engine](https://twig.symfony.com/))
 * MySQL
 * HTML5, CSS, JavaScript (using [Bootstrap 4](https://getbootstrap.com/) and [Choices.js](https://github.com/jshjohnson/Choices))
+* jQuery
 
 
 ## Upcoming features

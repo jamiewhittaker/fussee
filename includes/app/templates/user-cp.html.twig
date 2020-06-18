@@ -47,32 +47,32 @@
                         </ul>
 
                         {% if isAdmin %}
-                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                            <span>Admin options</span>
-                        </h6>
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>Admin options</span>
+                            </h6>
 
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-make-admin');">
-                                    Make admin
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-admin');">
-                                    Remove admin
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-add-recipe');">
-                                    Add recipe
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-markdown');">
-                                    Add blog post
-                                </a>
-                            </li>
-                        </ul>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-make-admin');">
+                                        Make Admin
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-admin');">
+                                        Remove Admin
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-add-recipe');">
+                                        Add Recipe
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-markdown');">
+                                        Add Blog Post
+                                    </a>
+                                </li>
+                            </ul>
                         {% endif %}
 
                     </div>
@@ -167,40 +167,141 @@
                         </form>
                     </div>
 
-                    <div class="cp-option cp-markdown">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Create blog post</h1>
+
+                    {% if isAdmin %}
+
+                        <div class="cp-option cp-make-admin">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">Make Admin</h1>
+                            </div>
+
+                            <p>Give a user administrative privileges.</p>
+
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="email">User's email address:</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <button name="makeAdminSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                            </form>
                         </div>
 
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-                        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
-                        <form method="post">
-                            <div class="form-group">
-                                <label for="post-title">Post title:</label>
-                                <input type="text" class="form-control" name="post-title" placeholder="Enter a title here...">
-                                <div class="markdown-editor">
-                                <textarea name="post-content"></textarea>
+                        <div class="cp-option cp-remove-admin">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">Remove Admin</h1>
+                            </div>
+
+                            <p>Remove a user's administrative privileges.</p>
+
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="email">User's email address:</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <button name="removeAdminSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                            </form>
+                        </div>
+
+
+                        <div class="cp-option cp-markdown">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">Create Blog Post</h1>
+                            </div>
+
+                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+                            <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="post-title">Post title:</label>
+                                    <input type="text" class="form-control" name="post-title" placeholder="Enter a title here...">
+                                    <div class="markdown-editor">
+                                        <textarea name="post-content"></textarea>
+                                    </div>
+
+
+                                    <label for="post-title">Post thumbnail:</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post-thumbnail">
+                                    <div class="post-submit">
+                                        <button name="post-submit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                                    </div>
                                 </div>
 
+                            </form>
+                            <script>
+                                var simplemde = new SimpleMDE();
+                            </script>
+                        </div>
 
-                            <label for="post-title">Post thumbnail:</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post-thumbnail">
-                            <div class="post-submit">
-                            <button name="post-submit" type="submit" class="btn btn-primary mb-2">Submit</button>
+
+                        <div class="cp-option cp-add-recipe">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">Add Recipe</h1>
                             </div>
-                            </div>
 
-                        </form>
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="title">Recipe Title:</label>
+                                    <input type="text" class="form-control" name="title">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="prepTime">Prep Time:</label>
+                                    <input type="text" class="form-control" name="prepTime">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="cookTime">Cook Time:</label>
+                                    <input type="text" class="form-control" name="cookTime">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="servings">Servings:</label>
+                                    <input type="text" class="form-control" name="servings">
+                                </div>
 
-                    <script>
-                        var simplemde = new SimpleMDE();
-                    </script>
-                    </div>
+                                <div class="form-group">
+                                    <label for="source">Source:</label>
+                                    <input type="text" class="form-control" name="source">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="url">Recipe URL:</label>
+                                    <input type="text" class="form-control" name="url">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="thumbnail">Thumbnail URL:</label>
+                                    <input type="text" class="form-control" name="thumbnail">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ingredients">Ingredients:</label>
+                                    <input id="ingredients" class="form-control" type="text" name="ingredients" placeholder="Enter something">
+                                </div>
+
+                                <div class="form-group">
+                                    <button name="recipeSubmit" type="submit" class="btn btn-primary mb-2">Submit</button>
+                                </div>
+                            </form>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    var firstElement = document.getElementById('ingredients');
+
+                                    var choices1 = new Choices(firstElement, {
+                                        delimiter: ',',
+                                        editItems: true,
+                                        removeItemButton: true,
+                                        duplicateItemsAllowed: false,
+                                        allowPaste: false
+                                    })
+                                });
+                            </script>
+
+                        </div>
+                    {% endif %}
 
                 </main>
             </div>
@@ -219,9 +320,9 @@
 
 
     {% else %}
-    <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> You aren't logged in. Please login to use this page.
-    </div>
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> You aren't logged in. Please login to use this page.
+        </div>
     {% endif %}
 
 {% endblock %}

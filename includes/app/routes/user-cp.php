@@ -85,11 +85,11 @@ $app->post('/user-cp', function(Request $request, Response $response){
             if ($makeAdminResult === true) {
                 $arr["success"] = "You have successfully given that account administrative privileges.";
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             } else {
                 $arr["error"] = $makeAdminResult;
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             }
         }
 
@@ -99,11 +99,11 @@ $app->post('/user-cp', function(Request $request, Response $response){
             if ($removeAdminResult === true) {
                 $arr["success"] = "You have successfully removed that account's administrative privileges.";
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             } else {
                 $arr["error"] = $removeAdminResult;
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             }
         }
 
@@ -113,11 +113,11 @@ $app->post('/user-cp', function(Request $request, Response $response){
             if ($recipeSubmitResult === true) {
                 $arr["success"] = "You have successfully added that recipe to the database.";
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             } else {
                 $arr["error"] = $recipeSubmitResult;
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+                return $this->view->render($response, 'user-cp.html.twig', $arr);
             }
         }
     }

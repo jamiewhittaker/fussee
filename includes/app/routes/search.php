@@ -181,9 +181,6 @@ $app->post('/search', function(Request $request, Response $response) {
     }
 
 
-    if (isset($_SESSION['loggedIn'])) {
-        $arr["firstName"] = $_SESSION["firstName"];
-        return $this->view->render($response, 'search.html.twig', $arr);
-    }
-
+    return $this->view->render($response, 'search.html.twig', $arr);
+    
 });

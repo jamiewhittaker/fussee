@@ -35,7 +35,7 @@
 
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-markdown');">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-favourites');">
                                     Remove favourites
                                 </a>
                             </li>
@@ -45,6 +45,35 @@
                                 </a>
                             </li>
                         </ul>
+
+                        {% if isAdmin %}
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Admin options</span>
+                        </h6>
+
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-make-admin');">
+                                    Make admin
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-remove-admin');">
+                                    Remove admin
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-add-recipe');">
+                                    Add recipe
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="#" onclick="javascript:openSetting('cp-markdown');">
+                                    Add blog post
+                                </a>
+                            </li>
+                        </ul>
+                        {% endif %}
 
                     </div>
                 </nav>

@@ -17,11 +17,15 @@ $app->get('/user-cp', function(Request $request, Response $response)
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
         $arr["loggedIn"] = true;
+        if (isset($_SESSION["isAdmin"])){
+            if ($_SESSION["isAdmin"] === true){
+                $arr["isAdmin"] = true;
+            }
+        }
     } else {
         session_destroy();
     }
     return $this->view->render($response, 'user-cp.html.twig', $arr);
-
 })->setName('/user-cp' );
 
 
@@ -29,6 +33,12 @@ $app->post('/user-cp', function(Request $request, Response $response){
 
     $db = new UserDatabaseWrapper();
     $arr["loggedIn"] = true;
+
+    if (isset($_SESSION["isAdmin"])){
+        if ($_SESSION["isAdmin"] === true){
+            $arr["isAdmin"] = true;
+        }
+    }
 
     if (isset($_POST['changeEmailSubmit'])) {
         $changeEmailResult = $db->changeEmail();
@@ -63,6 +73,52 @@ $app->post('/user-cp', function(Request $request, Response $response){
         } else {
             $arr["error"] = $changeFirstNameResult;
             $arr["firstName"] = $_SESSION['firstName'];
+        }
+    }
+
+
+    if ($_SESSION["isAdmin"] === TRUE) {
+
+        if (isset($_POST['makeAdminSubmit'])) {
+            $makeAdminResult = $db->makeAdmin();
+
+            if ($makeAdminResult === true) {
+                $arr["success"] = "You have successfully given that account administrative privileges.";
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+            } else {
+                $arr["error"] = $makeAdminResult;
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+            }
+        }
+
+        if (isset($_POST['removeAdminSubmit'])) {
+            $removeAdminResult = $db->removeAdmin();
+
+            if ($removeAdminResult === true) {
+                $arr["success"] = "You have successfully removed that account's administrative privileges.";
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+            } else {
+                $arr["error"] = $removeAdminResult;
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+            }
+        }
+
+        if (isset($_POST['recipeSubmit'])) {
+            $recipeSubmitResult = $db->recipeSubmit();
+
+            if ($recipeSubmitResult === true) {
+                $arr["success"] = "You have successfully added that recipe to the database.";
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-success.html.twig', $arr);
+            } else {
+                $arr["error"] = $recipeSubmitResult;
+                $arr["firstName"] = $_SESSION['firstName'];
+                return $this->view->render($response, 'admin-cp-error.html.twig', $arr);
+            }
         }
     }
 

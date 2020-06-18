@@ -10,7 +10,9 @@
         </div>
     {% else %}
 
-    <div class="favourites-wrapper">
+        <div class="container browse-container">
+
+        <div class="favourites-wrapper">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Here are your favourite recipes, {{ firstName }}.</h5>
             <small>Contains {{ count }} recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </small>
@@ -91,6 +93,7 @@
     <script src="js/remove-favourite.js"></script>
 
     {% endif %}
+        </div>
 
 {% else %}
 

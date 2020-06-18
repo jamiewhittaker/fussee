@@ -32,12 +32,11 @@
     </div>
     {% else %}
 
-    <div class="favourites-wrapper">
+        <div class="container browse-container">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">All Recipes – Page {{ ( (start / 20) + 1) }} of {{ (count / 20)|round(0, 'ceil') }} </h5>
             <small>Returned {{ count }} recipes</small>
         </div>
-    </div>
 
             <div id="pagebuttons-top">
                 {% if (start + 20) > count %}
@@ -96,7 +95,7 @@
     </div>
 
     {% endif %}
-
+</div>
 
     <script src="js/search-boxes.js"></script>
 

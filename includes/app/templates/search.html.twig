@@ -1,0 +1,80 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Fussee - Search{% endblock %}
+{% block content %}
+
+        <div class="searchArea">
+            <div class="searchHeader">What would you like to eat?</div>
+
+            <div class="searchbox">
+                <form action="search" method="post" class="searchbox">
+                    <div class="searchbox-inputs">
+                        <div id="search-left">
+                            <div id="search-info">Ingredients to include</div>
+                            <input id="yesIngredients" type="text" name="yesIngredients" placeholder="Enter something" value="{{ yesSearched }}">
+                        </div>
+                        <div id="search-right">
+                            <div id="search-info">Ingredients to exclude</div>
+                            <input id="noIngredients" type="text" name="noIngredients" placeholder="Enter something" value="{{ noSearched }}">
+                        </div>
+                    </div>
+                    <div id="submit-button">
+                        <input type="submit" name="submit" value="Search"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    {% if error is defined %}
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> {{ error }}
+    </div>
+    {% else %}
+
+    <div class="container browse-container">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Search Results</h5>
+            <small>{{ resultNumber }} recipes returned</small>
+        </div>
+
+            <div class="homepage-wrapper">
+                {% for recipe in search %}
+                    <div class="list-group frontpage">
+                        <li class="list-group-item list-group-item-action align-items-start">
+                            <div class="d-flex">
+                                <a href="{{ recipe.recipeURL }}"><img class="img-thumbnail" src="{{ recipe.recipeImageURL }}" alt="{{ recipe.recipeTitle }}"></a>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <div>
+                                        <h4 class="mb-0"><a href="{{ recipe.recipeURL }}">{{ recipe.recipeTitle }}</a></h4>
+                                        <small>{{ recipe.recipeSource }}</small>
+                                    </div>
+
+                                    {% if loggedIn %}
+                                        <div class="favourite" data-id="{{ recipe.recipeID }}">
+                                            <i class="far fa-heart"></i>
+                                            <div class="favourite-text">Add to favourites</div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="recipe-badges">
+                                <span class="badge badge-primary badge-pill prep-badge">Prep Time: {{ recipe.recipePrepTime }}</span>
+                                <span class="badge badge-primary badge-pill cook-badge">Cook Time: {{ recipe.recipeCookTime }}</span>
+                                <span class="badge badge-primary badge-pill serves-badge">{{ recipe.recipeServings }}</span>
+                            </div>
+                        </li>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    {% endif %}
+</div>
+    </div>
+
+    <script src="js/search-boxes.js"></script>
+
+    <script src="js/add-favourite.js"></script>
+
+
+{% endblock %}

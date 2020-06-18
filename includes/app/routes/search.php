@@ -14,14 +14,18 @@ $app->post('/search', function(Request $request, Response $response) {
 
     $db = new RecipeDatabaseWrapper();
 
+    if (isset($_SESSION['loggedIn'])) {
+        $arr["loggedIn"] = true;
+        $arr["firstName"] = $_SESSION['firstName'];
+    }
+
     foreach ($yesTagsArray as $tag) {
         if ( (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $tag) ) ) {
             $arr["error"] = "One or more search tags contain invalid special character(s)";
             if (isset($_SESSION['loggedIn'])){
-                $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                return $this->view->render($response, 'search.html.twig', $arr);
             } else {
-                return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                return $this->view->render($response, 'search.html.twig', $arr);
             }
         }
     }
@@ -31,9 +35,9 @@ $app->post('/search', function(Request $request, Response $response) {
             $arr["error"] = "One or more search tags contain invalid special character(s)";
             if (isset($_SESSION['loggedIn'])){
                 $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                return $this->view->render($response, 'search.html.twig', $arr);
             } else {
-                return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                return $this->view->render($response, 'search.html.twig', $arr);
             }
         }
     }
@@ -42,9 +46,9 @@ $app->post('/search', function(Request $request, Response $response) {
         $arr["error"] = "Search fields empty, please enter some search tags";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
@@ -52,9 +56,9 @@ $app->post('/search', function(Request $request, Response $response) {
         $arr["error"] = "Maximum of 5 tags allowed in each field";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
@@ -62,9 +66,9 @@ $app->post('/search', function(Request $request, Response $response) {
         $arr["error"] = "Maximum of 5 tags allowed in each field";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
@@ -74,9 +78,9 @@ $app->post('/search', function(Request $request, Response $response) {
                 $arr["error"] = "Tags can only contain alphabetic characters";
                 if (isset($_SESSION['loggedIn'])){
                     $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                    return $this->view->render($response, 'search.html.twig', $arr);
                 } else {
-                    return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                    return $this->view->render($response, 'search.html.twig', $arr);
                 }
             }
         }
@@ -88,9 +92,9 @@ $app->post('/search', function(Request $request, Response $response) {
                 $arr["error"] = "Tags can only contain alphabetic characters";
                 if (isset($_SESSION['loggedIn'])){
                     $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+                    return $this->view->render($response, 'search-.html.twig', $arr);
                 } else {
-                    return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+                    return $this->view->render($response, 'search.html.twig', $arr);
                 }
             }
         }
@@ -209,19 +213,19 @@ $app->post('/search', function(Request $request, Response $response) {
         $arr["error"] = "No results found, try using different tags";
         if (isset($_SESSION['loggedIn'])){
             $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search-error-loggedin.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         } else {
-            return $this->view->render($response, 'search-error-loggedout.html.twig', $arr);
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
 
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
-        return $this->view->render($response, 'search-loggedin.html.twig', $arr);
+        return $this->view->render($response, 'search.html.twig', $arr);
     } else {
         session_destroy();
-        return $this->view->render($response, 'search-loggedout.html.twig', $arr);
+        return $this->view->render($response, 'search.html.twig', $arr);
     }
 
 });

@@ -3,6 +3,8 @@ Fussee is a website specifically tailored towards fussy eaters and people that s
 
 Fussee was originally created as my final year project for my Bachelor's Degree but I've decided to actively work on it whilst I'm searching for employment. The front-end is currently being redesigned using Bootstrap.
 
+A live version of the site is hosted [here](https://jeimi.dev) but may not be as up to date as the version in this repository.
+
 
 ## Technologies
 * PHP 7 (using [SLIM Framework](http://www.slimframework.com/) and [TWIG Template Engine](https://twig.symfony.com/))

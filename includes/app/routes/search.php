@@ -22,66 +22,37 @@ $app->post('/search', function(Request $request, Response $response) {
     foreach ($yesTagsArray as $tag) {
         if ( (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $tag) ) ) {
             $arr["error"] = "One or more search tags contain invalid special character(s)";
-            if (isset($_SESSION['loggedIn'])){
-                return $this->view->render($response, 'search.html.twig', $arr);
-            } else {
-                return $this->view->render($response, 'search.html.twig', $arr);
-            }
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
     foreach ($noTagsArray as $tag) {
         if ( (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/ ', $tag) ) ) {
             $arr["error"] = "One or more search tags contain invalid special character(s)";
-            if (isset($_SESSION['loggedIn'])){
-                $arr["firstName"] = $_SESSION['firstName'];
-                return $this->view->render($response, 'search.html.twig', $arr);
-            } else {
-                return $this->view->render($response, 'search.html.twig', $arr);
-            }
+            return $this->view->render($response, 'search.html.twig', $arr);
         }
     }
 
     if (($yesTags === "") AND ($noTags === "")) {
         $arr["error"] = "Search fields empty, please enter some search tags";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search.html.twig', $arr);
-        }
+        return $this->view->render($response, 'search.html.twig', $arr);
     }
 
     if (count($yesTagsArray) > 5) {
         $arr["error"] = "Maximum of 5 tags allowed in each field";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search.html.twig', $arr);
-        }
+        return $this->view->render($response, 'search.html.twig', $arr);
     }
 
     if (count($noTagsArray) > 5) {
         $arr["error"] = "Maximum of 5 tags allowed in each field";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search.html.twig', $arr);
-        }
+        return $this->view->render($response, 'search.html.twig', $arr);
     }
 
     foreach ($yesTagsArray as $tag){
         if ($tag !== "") {
             if ((ctype_alpha($tag) === FALSE)) {
                 $arr["error"] = "Tags can only contain alphabetic characters";
-                if (isset($_SESSION['loggedIn'])){
-                    $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'search.html.twig', $arr);
-                } else {
-                    return $this->view->render($response, 'search.html.twig', $arr);
-                }
+                return $this->view->render($response, 'search.html.twig', $arr);
             }
         }
     }
@@ -90,12 +61,7 @@ $app->post('/search', function(Request $request, Response $response) {
         if ($tag !== "") {
             if ((ctype_alpha($tag) === FALSE)) {
                 $arr["error"] = "Tags can only contain alphabetic characters";
-                if (isset($_SESSION['loggedIn'])){
-                    $arr["firstName"] = $_SESSION['firstName'];
-                    return $this->view->render($response, 'search-.html.twig', $arr);
-                } else {
-                    return $this->view->render($response, 'search.html.twig', $arr);
-                }
+                return $this->view->render($response, 'search.html.twig', $arr);
             }
         }
     }
@@ -211,20 +177,12 @@ $app->post('/search', function(Request $request, Response $response) {
     if (count($searchResult) === 0)
     {
         $arr["error"] = "No results found, try using different tags";
-        if (isset($_SESSION['loggedIn'])){
-            $arr["firstName"] = $_SESSION['firstName'];
-            return $this->view->render($response, 'search.html.twig', $arr);
-        } else {
-            return $this->view->render($response, 'search.html.twig', $arr);
-        }
+        return $this->view->render($response, 'search.html.twig', $arr);
     }
 
 
     if (isset($_SESSION['loggedIn'])) {
         $arr["firstName"] = $_SESSION["firstName"];
-        return $this->view->render($response, 'search.html.twig', $arr);
-    } else {
-        session_destroy();
         return $this->view->render($response, 'search.html.twig', $arr);
     }
 
